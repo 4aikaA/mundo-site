@@ -693,27 +693,65 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 </div>
 
     <div class="title_block_center">
-        <h2 class="title">Видео-обзоры<br>
-            <span>180+ готовых объектов</span>
-        </h2>
-        <div class="title_descr">Отзывы клиентов, бесплатные уроки по вентиляции</div>
+        <h2 class="title">Примеры работ</h2>
+        <div class="title_descr">Наши реальные проекты</div>
         <a href="primery-rabot/index.html" class="btn_icon">
             <span>Смотреть все</span>
-            <img src="wp-content/themes/hvac/img/btnarrow_w.svg" alt="">
         </a>
     </div>
 
-        <div class="work_block">
-                        <a href="primery-rabot/index.html#Видео 1">
-            <img src="wp-content/uploads/2024/01/photo_2024-01-14_14-02-14.jpg" alt="">
-        </a>
-                                <a href="primery-rabot/index.html#Видео 2">
-            <img src="wp-content/uploads/2024/01/photo_2023-10-29_12-20-48-2.jpg" alt="">
-        </a>
-                                <a href="primery-rabot/index.html#Видео 3">
-            <img src="wp-content/uploads/2024/01/photo_2023-11-05_14-01-14-2.jpg" alt="">
-        </a>
+        <div class="work_block_container">
+            <div class="work_block">
+                <a href="primery-rabot/index.html#Работа 1" class="work_item">
+                    <img src="wp-content/themes/hvac/img/Примеры работ/Mercedez-Benz.png" alt="Сервисный центр Mercedez-Benz">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Сервисный центр "Mercedez-Benz"</div>
+                        <div class="work_item_descr">Монтаж системы кондиционирования в сервисном центре по ремонту грузовых автомобилей "Mercedez-Benz"</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 2" class="work_item">
+                    <img src="wp-content/themes/hvac/img/Примеры работ/Кинотеатр Курортный.jpg" alt="Кинотеатр Курортный">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Кинотеатр "Курортный"</div>
+                        <div class="work_item_descr">Монтаж и сервисное обслуживание системы вентиляции с рекуперацией тепла, систем кондиционирования большого и малого залов кинотеатра</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 3" class="work_item">
+                    <img src="wp-content/themes/hvac/img/Примеры работ/Белые Ночи.png" alt="Санаторий Белые Ночи">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Санаторий "Белые Ночи". Обособленное подразделение СОГАЗ</div>
+                        <div class="work_item_descr">Монтаж и обслуживание систем вентиляции бассейна, главного корпуса, системы кондиционирования санатория. Проектирование и монтаж системы дымоудаления и подпора воздуха в лифтовые тамбуры</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 4" class="work_item">
+                    <img src="wp-content/themes/hvac/img/Примеры работ/НВХ РУС.png" alt="Завод НВХ РУС">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Завод НВХ РУС. Поставщик завода Hyundai</div>
+                        <div class="work_item_descr">Разработка проекта и автоматизация системы вентиляции по тех.заданию Заказчика</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 5" class="work_item">
+                    <img src="wp-content/themes/hvac/img/Примеры работ/1000м2.png" alt="Котельная жилого дома 1000м2">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Котельная жилого дома 1000м²</div>
+                        <div class="work_item_descr">Монтаж и обслуживание систем отопления и вентиляции жилого комплекса</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+            </div>
+            <div class="work_block_nav">
+                <div class="work_block_prev">
+                    <img src="wp-content/themes/hvac/img/btnarrow.svg" alt="Предыдущее">
+                </div>
+                <div class="work_block_next">
+                    <img src="wp-content/themes/hvac/img/btnarrow.svg" alt="Следующее">
+                </div>
+            </div>
+        </div>
     
 
     <div class="steps_title">Если коротко, <img src="wp-content/themes/hvac/img/tool.png" alt=""> то разработка проекта
@@ -1421,5 +1459,77 @@ document.addEventListener('DOMContentLoaded', function() {
                 logoChangeInterval = setInterval(changeLogoImage, 2000);
             }
         });
+
+                    // Горизонтальный скролл для фото работ
+            document.addEventListener('DOMContentLoaded', function() {
+                var workBlock = document.querySelector('.work_block');
+                var prevBtn = document.querySelector('.work_block_prev');
+                var nextBtn = document.querySelector('.work_block_next');
+                
+                if (workBlock) {
+                    var scrollAmount = 300; // количество пикселей для скролла
+                    
+                    // Функция для скролла влево
+                    function scrollLeft() {
+                        workBlock.scrollBy({
+                            left: -scrollAmount,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Функция для скролла вправо
+                    function scrollRight() {
+                        workBlock.scrollBy({
+                            left: scrollAmount,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Обработчики для кнопок навигации
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', function() {
+                            if (prevBtn.dataset.clickTimeout) return;
+                            prevBtn.dataset.clickTimeout = true;
+                            setTimeout(() => delete prevBtn.dataset.clickTimeout, 300);
+                            
+                            scrollLeft();
+                        });
+                    }
+                    
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', function() {
+                            if (nextBtn.dataset.clickTimeout) return;
+                            nextBtn.dataset.clickTimeout = true;
+                            setTimeout(() => delete nextBtn.dataset.clickTimeout, 300);
+                            
+                            scrollRight();
+                        });
+                    }
+                    
+                    // Обработчик для скролла колесиком мыши
+                    workBlock.addEventListener('wheel', function(e) {
+                        e.preventDefault();
+                        
+                        if (workBlock.dataset.wheelTimeout) {
+                            return;
+                        }
+                        
+                        workBlock.dataset.wheelTimeout = true;
+                        setTimeout(() => {
+                            delete workBlock.dataset.wheelTimeout;
+                        }, 300);
+                        
+                        if (e.deltaY > 0) {
+                            // Скролл вниз/вправо
+                            scrollRight();
+                        } else {
+                            // Скролл вверх/влево
+                            scrollLeft();
+                        }
+                    });
+                }
+            });
+        });
+
     </script>
 
