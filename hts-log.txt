@@ -1,0 +1,26 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sun, 27 Jul 2025 20:41:20 at https://dmitry-hvac.ru/
+(winhttrack -qwr5C2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "ru, en, *" https://dmitry-hvac.ru/ -O1 "C:\Мои Web Сайты\Mundo копия" )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+20:41:20	Warning: 	HTML file (0 bytes) retransferred due to lack of cache: https://dmitry-hvac.ru/
+20:41:21	Warning: 	Note: due to https://dmitry-hvac.ru remote robots.txt rules, links beginning with these path will be forbidden: /wp-admin/ (see in the options to disable this)
+20:41:47	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2 (from https://dmitry-hvac.ru/)
+20:41:47	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1 (from https://dmitry-hvac.ru/)
+20:41:47	Error: 	"Not Allowed" (405) at link https://dmitry-hvac.ru/xmlrpc.php?rsd (from https://dmitry-hvac.ru/)
+20:41:47	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/wp-content/themes/hvac/js/jquery-3.6.1.min.js (from https://dmitry-hvac.ru/)
+20:41:47	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/wp-content/themes/hvac/js/gsap/gsap.min.js (from https://dmitry-hvac.ru/)
+20:41:47	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/wp-content/themes/hvac/css/splide.min.css (from https://dmitry-hvac.ru/)
+20:41:56	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/konsultatsiya/ (from https://dmitry-hvac.ru/)
+20:41:56	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/primery-rabot/ (from https://dmitry-hvac.ru/)
+20:41:56	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/blog/ (from https://dmitry-hvac.ru/)
+20:41:56	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/contacts/ (from https://dmitry-hvac.ru/)
+20:41:56	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/politic/ (from https://dmitry-hvac.ru/)
+20:41:56	Error: 	"Not Found" (404) at link https://dmitry-hvac.ru/wp-content/themes/hvac/js/custom.js (from https://dmitry-hvac.ru/)
+20:41:56	Error: 	"Error when decompressing" (-1) at link https://dmitry-hvac.ru/Version/ (from https://dmitry-hvac.ru/wp-content/themes/hvac/js/TweenMax.min.js)
+
+HTTrack Website Copier/3.49-2 mirror complete in 37 seconds : 84 links scanned, 70 files written (6546735 bytes overall), 70 files updated [6537322 bytes received at 176684 bytes/sec], 538267 bytes transferred using HTTP compression in 36 files, ratio 52%, 4.9 requests per connection
+(13 errors, 2 warnings, 0 messages)
