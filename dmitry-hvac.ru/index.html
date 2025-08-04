@@ -49,8 +49,9 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 :root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
 </style>
 <link rel='stylesheet' id='designhead-style-css' href='wp-content/themes/hvac/style8a54.css?ver=1.0.0' media='all' />
-<script src="wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1" id="jquery-core-js"></script>
-<script src="wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<!-- jQuery подключен ниже -->
+<script src="wp-includes/js/jquery/jquery.minf43b.js"></script>
+<script src="wp-includes/js/jquery/jquery-migrate.min5589.js"></script>
 <link rel="https://api.w.org/" href="wp-json/index.html" /><link rel="alternate" title="JSON" type="application/json" href="wp-json/wp/v2/pages/6.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.html?rsd" />
 <meta name="generator" content="WordPress 6.8.2" />
 <link rel="canonical" href="index.html" />
@@ -63,15 +64,20 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 <meta name="msapplication-TileImage" content="https://dmitry-hvac.ru/wp-content/uploads/2024/01/cropped-cropped-spoiler-270x270.png" />
 
 
+    <!-- jQuery должен загружаться первым -->
+    <!-- jQuery должен загружаться первым -->
     <script src="wp-content/themes/hvac/js/jquery-3.6.1.min.js"></script>
+    
+    <!-- GSAP библиотеки -->
     <script src="wp-content/themes/hvac/js/gsap/gsap.min.js"></script>
-    <script src="wp-content/themes/hvac/js/TweenMax.min.js"></script>
-
     <script src="wp-content/themes/hvac/js/gsap/ScrollTrigger.js"></script>
     <script src="wp-content/themes/hvac/js/gsap/ScrollToPlugin.min.js"></script>
-
-
+    
+    <!-- Splide слайдер -->
     <script src="wp-content/themes/hvac/js/splide.min.js"></script>
+    
+    <!-- Навигация -->
+    <script src="wp-content/themes/hvac/js/navigation8a54.js"></script>
     <link rel="stylesheet" type="text/css" href="wp-content/themes/hvac/css/splide.min.css" />
 
 
@@ -703,7 +709,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
         <div class="work_block_container">
             <div class="work_block">
                 <a href="primery-rabot/index.html#Работа 1" class="work_item">
-                    <img src="wp-content/themes/hvac/img/Примеры работ/Mercedez-Benz.png" alt="Сервисный центр Mercedez-Benz">
+                    <img src="wp-content/themes/hvac/img/examples/mercedez-benz.png" alt="Сервисный центр Mercedez-Benz">
                     <div class="work_item_overlay">
                         <div class="work_item_title">Сервисный центр "Mercedez-Benz"</div>
                         <div class="work_item_descr">Монтаж системы кондиционирования в сервисном центре по ремонту грузовых автомобилей "Mercedez-Benz"</div>
@@ -711,7 +717,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                     </div>
                 </a>
                 <a href="primery-rabot/index.html#Работа 2" class="work_item">
-                    <img src="wp-content/themes/hvac/img/Примеры работ/Кинотеатр Курортный.jpg" alt="Кинотеатр Курортный">
+                    <img src="wp-content/themes/hvac/img/examples/cinema-kurortny.jpg" alt="Кинотеатр Курортный">
                     <div class="work_item_overlay">
                         <div class="work_item_title">Кинотеатр "Курортный"</div>
                         <div class="work_item_descr">Монтаж и сервисное обслуживание системы вентиляции с рекуперацией тепла, систем кондиционирования большого и малого залов кинотеатра</div>
@@ -719,7 +725,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                     </div>
                 </a>
                 <a href="primery-rabot/index.html#Работа 3" class="work_item">
-                    <img src="wp-content/themes/hvac/img/Примеры работ/Белые Ночи.png" alt="Санаторий Белые Ночи">
+                    <img src="wp-content/themes/hvac/img/examples/sanatorium-white-nights.png" alt="Санаторий Белые Ночи">
                     <div class="work_item_overlay">
                         <div class="work_item_title">Санаторий "Белые Ночи". Обособленное подразделение СОГАЗ</div>
                         <div class="work_item_descr">Монтаж и обслуживание систем вентиляции бассейна, главного корпуса, системы кондиционирования санатория. Проектирование и монтаж системы дымоудаления и подпора воздуха в лифтовые тамбуры</div>
@@ -727,7 +733,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                     </div>
                 </a>
                 <a href="primery-rabot/index.html#Работа 4" class="work_item">
-                    <img src="wp-content/themes/hvac/img/Примеры работ/НВХ РУС.png" alt="Завод НВХ РУС">
+                    <img src="wp-content/themes/hvac/img/examples/nhv-rus.png" alt="Завод НВХ РУС">
                     <div class="work_item_overlay">
                         <div class="work_item_title">Завод НВХ РУС. Поставщик завода Hyundai</div>
                         <div class="work_item_descr">Разработка проекта и автоматизация системы вентиляции по тех.заданию Заказчика</div>
@@ -735,7 +741,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                     </div>
                 </a>
                 <a href="primery-rabot/index.html#Работа 5" class="work_item">
-                    <img src="wp-content/themes/hvac/img/Примеры работ/1000м2.png" alt="Котельная жилого дома 1000м2">
+                    <img src="wp-content/themes/hvac/img/examples/boiler-1000m2.png" alt="Котельная жилого дома 1000м2">
                     <div class="work_item_overlay">
                         <div class="work_item_title">Котельная жилого дома 1000м²</div>
                         <div class="work_item_descr">Монтаж и обслуживание систем отопления и вентиляции жилого комплекса</div>
@@ -744,12 +750,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 </a>
             </div>
             <div class="work_block_nav">
-                <div class="work_block_prev">
-                    <img src="wp-content/themes/hvac/img/btnarrow.svg" alt="Предыдущее">
-                </div>
-                <div class="work_block_next">
-                    <img src="wp-content/themes/hvac/img/btnarrow.svg" alt="Следующее">
-                </div>
+                <div class="work_block_prev"></div>
+                <div class="work_block_next"></div>
             </div>
         </div>
     
@@ -996,7 +998,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 <script id="ajax-custom-script-js-extra">
 var ajaxurl = "index.html\/\/dmitry-hvac.ru\/wp-admin\/admin-ajax.php";
 </script>
-<script src="wp-content/themes/hvac/js/custom.html" id="ajax-custom-script-js"></script>
+<!-- Удален неправильный файл custom.html -->
 </body>
 
 
@@ -1340,196 +1342,244 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Автоматическая смена плашек
-        document.addEventListener('DOMContentLoaded', function() {
-            var container = document.querySelector('.services_block_container');
-            var slides = document.querySelectorAll('.services_block_item');
-            var currentSlide = 0;
-            var autoSlideInterval;
-            var isHovered = false;
+        var container = document.querySelector('.services_block_container');
+        var slides = document.querySelectorAll('.services_block_item');
+        var currentSlide = 0;
+        var autoSlideInterval;
+        var isHovered = false;
 
-            if (container && slides.length > 0) {
-                // Функция для перехода к следующей плашке
-                function nextSlide() {
-                    if (isHovered) return; // Не переключаем, если наведена мышь
-                    
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    var slideWidth = slides[0].offsetWidth + 16; // включая gap
-                    var targetScroll = currentSlide * slideWidth;
-                    
-                    container.scrollTo({
-                        left: targetScroll,
-                        behavior: 'smooth'
-                    });
-                }
-
-                // Обработчики для остановки автопрокрутки при наведении
-                container.addEventListener('mouseenter', function() {
-                    isHovered = true;
-                    if (autoSlideInterval) {
-                        clearInterval(autoSlideInterval);
-                    }
-                });
-
-                container.addEventListener('mouseleave', function() {
-                    isHovered = false;
-                    // Перезапускаем автопрокрутку через 1 секунду после ухода мыши
-                    setTimeout(function() {
-                        if (!isHovered) {
-                            startAutoSlide();
-                        }
-                    }, 1000);
-                });
-
-                // Функция для запуска автопрокрутки
-                function startAutoSlide() {
-                    if (autoSlideInterval) {
-                        clearInterval(autoSlideInterval);
-                    }
-                    autoSlideInterval = setInterval(nextSlide, 3000); // 3 секунды между сменами
-                }
-
-                // Запускаем автопрокрутку через 2 секунды после загрузки страницы
-                setTimeout(startAutoSlide, 2000);
-            }
-        });
-
-        // Автоматическая смена изображений из папки LOGO
-        document.addEventListener('DOMContentLoaded', function() {
-            // Массив изображений из папки LOGO
-            var logoImages = [
-                'wp-content/themes/hvac/img/LOGO/FLIXX.png',
-                'wp-content/themes/hvac/img/LOGO/Eckerle.png',
-                'wp-content/themes/hvac/img/LOGO/Escelco.png',
-                'wp-content/themes/hvac/img/LOGO/BYD.png',
-                'wp-content/themes/hvac/img/LOGO/TAB.png',
-                'wp-content/themes/hvac/img/LOGO/Huawei.png',
-                'wp-content/themes/hvac/img/LOGO/Fronius.png',
-                'wp-content/themes/hvac/img/LOGO/SMA.png',
-                'wp-content/themes/hvac/img/LOGO/OEM.jpg',
-                'wp-content/themes/hvac/img/LOGO/Victron Energy.png',
-                'wp-content/themes/hvac/img/LOGO/Fox-ESS.png',
-                'wp-content/themes/hvac/img/LOGO/TECH Controllers.png',
-                'wp-content/themes/hvac/img/LOGO/Uponor.png',
-                'wp-content/themes/hvac/img/LOGO/Risen.png',
-                'wp-content/themes/hvac/img/LOGO/LUYMAR.png',
-                'wp-content/themes/hvac/img/LOGO/INNOWATER.png',
-                'wp-content/themes/hvac/img/LOGO/Holls.png',
-                'wp-content/themes/hvac/img/LOGO/Hidros.png',
-                'wp-content/themes/hvac/img/LOGO/pylontech.png',
-                'wp-content/themes/hvac/img/LOGO/JASolar.png',
-                'wp-content/themes/hvac/img/LOGO/JohnsonLogo.png',
-                'wp-content/themes/hvac/img/LOGO/AldesLogo.png'
-            ];
-
-            var currentImageIndex = 0;
-            var dhImage = document.querySelector('.about_block .dh');
-            var dhmobImage = document.querySelector('.about_block .dhmob');
-            var logoChangeInterval;
-
-            if (dhImage && dhmobImage) {
-                // Функция для смены изображения
-                function changeLogoImage() {
-                    currentImageIndex = (currentImageIndex + 1) % logoImages.length;
-                    var newImageSrc = logoImages[currentImageIndex];
-                    
-                    // Плавно меняем изображения
-                    dhImage.style.opacity = '0';
-                    dhmobImage.style.opacity = '0';
-                    
-                    setTimeout(function() {
-                        dhImage.src = newImageSrc;
-                        dhmobImage.src = newImageSrc;
-                        
-                        dhImage.style.opacity = '1';
-                        dhmobImage.style.opacity = '1';
-                    }, 300);
-                }
-
-                // Добавляем CSS для плавного перехода
-                var style = document.createElement('style');
-                style.textContent = `
-                    .about_block .dh,
-                    .about_block .dhmob {
-                        transition: opacity 0.3s ease;
-                    }
-                `;
-                document.head.appendChild(style);
-
-                // Запускаем автоматическую смену каждые 2 секунды
-                logoChangeInterval = setInterval(changeLogoImage, 2000);
-            }
-        });
-
-                    // Горизонтальный скролл для фото работ
-            document.addEventListener('DOMContentLoaded', function() {
-                var workBlock = document.querySelector('.work_block');
-                var prevBtn = document.querySelector('.work_block_prev');
-                var nextBtn = document.querySelector('.work_block_next');
+        if (container && slides.length > 0) {
+            // Функция для перехода к следующей плашке
+            function nextSlide() {
+                if (isHovered) return; // Не переключаем, если наведена мышь
                 
-                if (workBlock) {
-                    var scrollAmount = 300; // количество пикселей для скролла
-                    
-                    // Функция для скролла влево
-                    function scrollLeft() {
-                        workBlock.scrollBy({
-                            left: -scrollAmount,
-                            behavior: 'smooth'
-                        });
-                    }
-                    
-                    // Функция для скролла вправо
-                    function scrollRight() {
-                        workBlock.scrollBy({
-                            left: scrollAmount,
-                            behavior: 'smooth'
-                        });
-                    }
-                    
-                    // Обработчики для кнопок навигации
-                    if (prevBtn) {
-                        prevBtn.addEventListener('click', function() {
-                            if (prevBtn.dataset.clickTimeout) return;
-                            prevBtn.dataset.clickTimeout = true;
-                            setTimeout(() => delete prevBtn.dataset.clickTimeout, 300);
-                            
-                            scrollLeft();
-                        });
-                    }
-                    
-                    if (nextBtn) {
-                        nextBtn.addEventListener('click', function() {
-                            if (nextBtn.dataset.clickTimeout) return;
-                            nextBtn.dataset.clickTimeout = true;
-                            setTimeout(() => delete nextBtn.dataset.clickTimeout, 300);
-                            
-                            scrollRight();
-                        });
-                    }
-                    
-                    // Обработчик для скролла колесиком мыши
-                    workBlock.addEventListener('wheel', function(e) {
-                        e.preventDefault();
-                        
-                        if (workBlock.dataset.wheelTimeout) {
-                            return;
-                        }
-                        
-                        workBlock.dataset.wheelTimeout = true;
-                        setTimeout(() => {
-                            delete workBlock.dataset.wheelTimeout;
-                        }, 300);
-                        
-                        if (e.deltaY > 0) {
-                            // Скролл вниз/вправо
-                            scrollRight();
-                        } else {
-                            // Скролл вверх/влево
-                            scrollLeft();
-                        }
-                    });
+                currentSlide = (currentSlide + 1) % slides.length;
+                var slideWidth = slides[0].offsetWidth + 16; // включая gap
+                var targetScroll = currentSlide * slideWidth;
+                
+                container.scrollTo({
+                    left: targetScroll,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Обработчики для остановки автопрокрутки при наведении
+            container.addEventListener('mouseenter', function() {
+                isHovered = true;
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
                 }
             });
-        });
 
+            container.addEventListener('mouseleave', function() {
+                isHovered = false;
+                // Перезапускаем автопрокрутку через 1 секунду после ухода мыши
+                setTimeout(function() {
+                    if (!isHovered) {
+                        startAutoSlide();
+                    }
+                }, 1000);
+            });
+
+            // Функция для запуска автопрокрутки
+            function startAutoSlide() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                }
+                autoSlideInterval = setInterval(nextSlide, 3000); // 3 секунды между сменами
+            }
+
+            // Запускаем автопрокрутку через 2 секунды после загрузки страницы
+            setTimeout(startAutoSlide, 2000);
+        }
+
+                // Автоматическая смена изображений из папки LOGO
+        var logoImages = [
+            'wp-content/themes/hvac/img/ЛогоВСЕ.png',
+            'wp-content/themes/hvac/img/LOGO/FLIXX.png',
+            'wp-content/themes/hvac/img/LOGO/Eckerle.png',
+            'wp-content/themes/hvac/img/LOGO/Escelco.png',
+            'wp-content/themes/hvac/img/LOGO/BYD.png',
+            'wp-content/themes/hvac/img/LOGO/TAB.png',
+            'wp-content/themes/hvac/img/LOGO/Huawei.png',
+            'wp-content/themes/hvac/img/LOGO/Fronius.png',
+            'wp-content/themes/hvac/img/LOGO/SMA.png',
+            'wp-content/themes/hvac/img/LOGO/OEM.jpg',
+            'wp-content/themes/hvac/img/LOGO/Victron Energy.png',
+            'wp-content/themes/hvac/img/LOGO/Fox-ESS.png',
+            'wp-content/themes/hvac/img/LOGO/TECH Controllers.png',
+            'wp-content/themes/hvac/img/LOGO/Uponor.png',
+            'wp-content/themes/hvac/img/LOGO/Risen.png',
+            'wp-content/themes/hvac/img/LOGO/LUYMAR.png',
+            'wp-content/themes/hvac/img/LOGO/INNOWATER.png',
+            'wp-content/themes/hvac/img/LOGO/Holls.png',
+            'wp-content/themes/hvac/img/LOGO/Hidros.png',
+            'wp-content/themes/hvac/img/LOGO/pylontech.png',
+            'wp-content/themes/hvac/img/LOGO/JASolar.png',
+            'wp-content/themes/hvac/img/LOGO/JohnsonLogo.png',
+            'wp-content/themes/hvac/img/LOGO/AldesLogo.png'
+        ];
+
+        var currentImageIndex = 0;
+        var dhImage = document.querySelector('.about_block .dh');
+        var dhmobImage = document.querySelector('.about_block .dhmob');
+        var logoChangeInterval;
+
+        if (dhImage && dhmobImage) {
+            // Функция для смены изображения
+            function changeLogoImage() {
+                currentImageIndex = (currentImageIndex + 1) % logoImages.length;
+                var newImageSrc = logoImages[currentImageIndex];
+                
+                // Плавно меняем изображения
+                dhImage.style.opacity = '0';
+                dhmobImage.style.opacity = '0';
+                
+                setTimeout(function() {
+                    dhImage.src = newImageSrc;
+                    dhmobImage.src = newImageSrc;
+                    
+                    dhImage.style.opacity = '1';
+                    dhmobImage.style.opacity = '1';
+                }, 300);
+            }
+
+            // Добавляем CSS для плавного перехода
+            var style = document.createElement('style');
+            style.textContent = `
+                .about_block .dh,
+                .about_block .dhmob {
+                    transition: opacity 0.3s ease;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Функция для запуска автолистания с разными интервалами
+            function startLogoChange() {
+                if (logoChangeInterval) {
+                    clearInterval(logoChangeInterval);
+                }
+                
+                // Если это первое изображение (ЛогоВСЕ.png), ждем 5 секунд
+                if (currentImageIndex === 0) {
+                    logoChangeInterval = setTimeout(function() {
+                        changeLogoImage();
+                        // После первого изображения переключаемся на интервал 1 секунда
+                        logoChangeInterval = setInterval(changeLogoImage, 1000);
+                    }, 5000);
+                } else {
+                    // Для остальных изображений интервал 1 секунда
+                    logoChangeInterval = setInterval(changeLogoImage, 1000);
+                }
+            }
+
+            // Запускаем автолистание через 2 секунды после загрузки страницы
+            setTimeout(startLogoChange, 2000);
+        }
+
+        // Горизонтальный скролл для фото работ
+        var workBlock = document.querySelector('.work_block');
+        var prevBtn = document.querySelector('.work_block_prev');
+        var nextBtn = document.querySelector('.work_block_next');
+        
+        if (workBlock) {
+            var scrollAmount = 300; // количество пикселей для скролла
+            
+            // Функция для скролла влево
+            function scrollLeft() {
+                workBlock.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Функция для скролла вправо
+            function scrollRight() {
+                workBlock.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Обработчики для кнопок навигации
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    if (prevBtn.dataset.clickTimeout) return;
+                    prevBtn.dataset.clickTimeout = true;
+                    setTimeout(() => delete prevBtn.dataset.clickTimeout, 300);
+                    
+                    scrollLeft();
+                });
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    if (nextBtn.dataset.clickTimeout) return;
+                    nextBtn.dataset.clickTimeout = true;
+                    setTimeout(() => delete nextBtn.dataset.clickTimeout, 300);
+                    
+                    scrollRight();
+                });
+            }
+            
+            // Обработчик для скролла колесиком мыши
+            workBlock.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                
+                if (workBlock.dataset.wheelTimeout) {
+                    return;
+                }
+                
+                workBlock.dataset.wheelTimeout = true;
+                setTimeout(() => {
+                    delete workBlock.dataset.wheelTimeout;
+                }, 300);
+                
+                if (e.deltaY > 0) {
+                    // Скролл вниз/вправо
+                    scrollRight();
+                } else {
+                    // Скролл вверх/влево
+                    scrollLeft();
+                }
+            });
+        }
+
+        // Функциональность стрелок для сервисов
+        var servicesContainer = document.querySelector('.services_block_container');
+        var servicesPrevBtn = document.querySelector('.services_block_prev');
+        var servicesNextBtn = document.querySelector('.services_block_next');
+        
+        if (servicesContainer && servicesPrevBtn && servicesNextBtn) {
+            var scrollAmount = 300;
+            
+            function scrollServicesLeft() {
+                servicesContainer.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+            
+            function scrollServicesRight() {
+                servicesContainer.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+            
+            servicesPrevBtn.addEventListener('click', function() {
+                if (servicesPrevBtn.dataset.clickTimeout) return;
+                servicesPrevBtn.dataset.clickTimeout = true;
+                setTimeout(() => delete servicesPrevBtn.dataset.clickTimeout, 300);
+                scrollServicesLeft();
+            });
+            
+            servicesNextBtn.addEventListener('click', function() {
+                if (servicesNextBtn.dataset.clickTimeout) return;
+                servicesNextBtn.dataset.clickTimeout = true;
+                setTimeout(() => delete servicesNextBtn.dataset.clickTimeout, 300);
+                scrollServicesRight();
+            });
+        }
     </script>
 
