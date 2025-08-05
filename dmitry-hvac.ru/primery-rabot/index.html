@@ -94,10 +94,301 @@
             font-size: 16px;
         }
     }
+    
+    /* Стили для модального окна */
+    .image-modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(5px);
+    }
+    
+    .image-modal-content {
+        position: relative;
+        margin: 5% auto;
+        padding: 20px;
+        width: 90%;
+        max-width: 800px;
+        max-height: 90vh;
+        overflow-y: auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    
+    .image-modal-close {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        color: #aaa;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10001;
+        transition: color 0.3s ease;
+    }
+    
+    .image-modal-close:hover {
+        color: #333;
+    }
+    
+    .image-modal-content img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .image-modal-info {
+        padding: 0 10px;
+    }
+    
+    .image-modal-info h3 {
+        color: #0C3C8C;
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    
+    .image-modal-info p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 8px;
+    }
+    
+    .image-modal-info p:last-child {
+        color: #999;
+        font-size: 14px;
+        font-style: italic;
+    }
+    
+    /* Кнопки навигации */
+    .image-modal-nav {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10003;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .image-modal-nav:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .image-modal-prev {
+        left: 20px;
+    }
+    
+    .image-modal-next {
+        right: 20px;
+    }
+    
+    /* Счетчик изображений */
+    .image-modal-counter {
+        text-align: center;
+        margin-top: 15px;
+        padding: 8px 16px;
+        background: rgba(12, 60, 140, 0.1);
+        border-radius: 20px;
+        color: #0C3C8C;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    
+    /* Анимация появления */
+    .image-modal.show {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    /* Стили для кликабельных проектов */
+    .project_item {
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project_item:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Адаптивность */
+    @media screen and (max-width: 768px) {
+        .image-modal-content {
+            margin: 10% auto;
+            width: 95%;
+            padding: 15px;
+        }
+        
+        .image-modal-info h3 {
+            font-size: 20px;
+        }
+        
+        .image-modal-info p {
+            font-size: 14px;
+        }
+        
+        /* Кнопки навигации на мобильных */
+        .image-modal-nav {
+            width: 50px;
+            height: 50px;
+            font-size: 22px;
+        }
+        
+        .image-modal-prev {
+            left: 10px;
+        }
+        
+        .image-modal-next {
+            right: 10px;
+        }
+    }
+    
+    /* Скрываем кнопки на очень маленьких экранах */
+    @media screen and (max-width: 480px) {
+        .image-modal-nav {
+            display: none !important;
+        }
+    }
     </style>
     
     <!-- jQuery должен загружаться первым -->
     <script src="../wp-content/themes/hvac/js/jquery-3.6.1.min.js"></script>
+    
+    <script>
+    // Функциональность модального окна для увеличения фото с листанием
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalCopyright = document.getElementById('modalCopyright');
+        const currentImageSpan = document.getElementById('currentImage');
+        const totalImagesSpan = document.getElementById('totalImages');
+        const closeBtn = document.querySelector('.image-modal-close');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        let currentImageIndex = 0;
+        const projectItems = document.querySelectorAll('.project_item');
+        const totalImages = projectItems.length;
+        
+        // Устанавливаем общее количество изображений
+        totalImagesSpan.textContent = totalImages;
+        
+        // Функция для обновления модального окна
+        function updateModal(index) {
+            const item = projectItems[index];
+            const img = item.querySelector('img');
+            const title = item.querySelector('.project_title');
+            const description = item.querySelector('.project_descr');
+            const copyright = item.querySelector('.project_copyright');
+            
+            modalImage.src = img.src;
+            modalImage.alt = img.alt;
+            modalTitle.textContent = title.textContent;
+            modalDescription.textContent = description.textContent;
+            modalCopyright.textContent = copyright.textContent;
+            currentImageSpan.textContent = index + 1;
+            
+            // Обновляем состояние кнопок
+            prevBtn.style.display = index === 0 ? 'none' : 'flex';
+            nextBtn.style.display = index === totalImages - 1 ? 'none' : 'flex';
+        }
+        
+        // Функция для перехода к предыдущему изображению
+        function showPrevImage() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                updateModal(currentImageIndex);
+            }
+        }
+        
+        // Функция для перехода к следующему изображению
+        function showNextImage() {
+            if (currentImageIndex < totalImages - 1) {
+                currentImageIndex++;
+                updateModal(currentImageIndex);
+            }
+        }
+        
+        // Добавляем обработчики клика на все проекты
+        projectItems.forEach(function(item, index) {
+            item.addEventListener('click', function() {
+                currentImageIndex = index;
+                updateModal(currentImageIndex);
+                
+                // Показываем модальное окно
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Обработчики для кнопок навигации
+        prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showPrevImage();
+        });
+        
+        nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showNextImage();
+        });
+        
+        // Закрытие модального окна по клику на крестик
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        });
+        
+        // Закрытие модального окна по клику вне его
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Навигация с клавиатуры
+        document.addEventListener('keydown', function(e) {
+            if (!modal.classList.contains('show')) return;
+            
+            if (e.key === 'Escape') {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            }
+        });
+    });
+    </script>
     
     <!-- GSAP библиотеки -->
     <script src="../wp-content/themes/hvac/js/gsap/gsap.min.js"></script>
@@ -324,82 +615,40 @@
         </div>
     </section>
 
+    <!-- Модальное окно для увеличения фото -->
+    <div id="imageModal" class="image-modal">
+        <div class="image-modal-content">
+            <span class="image-modal-close">&times;</span>
+            
+            <!-- Кнопки навигации -->
+            <button class="image-modal-nav image-modal-prev" id="prevBtn">&lt;</button>
+            <button class="image-modal-nav image-modal-next" id="nextBtn">&gt;</button>
+            
+            <img id="modalImage" src="" alt="Увеличенное изображение">
+            <div class="image-modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+                <p id="modalCopyright"></p>
+                <div class="image-modal-counter">
+                    <span id="currentImage">1</span> / <span id="totalImages">14</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <div class="footer">
-        <div class="container">
-            <div class="title_block">
-                <div></div>
-                <h2 class="title" id="contact-info">Контактная информация</h2>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="footer_info">
-                <div class="footer_info_item">
-                    <div class="footer_info_item_digit">01</div>
-                    <div class="footer_info_item_info">
-                        <div class="footer_info_item_info_name">/наш онлайн магазин</div>
-                        <div class="footer_info_item_info_contact">
-                            <a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer" class="mundoclimatico-link">Mundo Climatico - онлайн магазин климатического оборудования</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer_info_item">
-                    <div class="footer_info_item_digit">02</div>
-                    <div class="footer_info_item_info">
-                        <div class="footer_info_item_info_name">/время работы</div>
-                        <div class="footer_info_item_info_contact">пн-пт с 09:00 до 18:00 </div>
-                    </div>
-                </div>
-
-                <div class="footer_info_item">
-                    <div class="footer_info_item_digit">03</div>
-                    <div class="footer_info_item_info">
-                        <div class="footer_info_item_info_name">/телефон</div>
-                        <div class="footer_info_item_info_contact phone-numbers">
-                            <a href="tel:+34613705466" class="phone-link">+34 613 70 54 66</a>
-                            <a href="tel:+34681990388" class="phone-link">+34 681 99 03 88</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer_info_item">
-                    <div class="footer_info_item_digit">04</div>
-                    <div class="footer_info_item_info">
-                        <div class="footer_info_item_info_name">/социальные сети</div>
-                        <div class="footer_info_item_info_contact">
-                            <div class="footer_soc">
-                                <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img
-                                        src="../wp-content/themes/hvac/img/tgb.svg" alt="Телеграм"></a>
-                                <a href="https://t.me/Dima_Gudmaer" target="_blank" rel="noopener noreferrer"><img
-                                        src="../wp-content/themes/hvac/img/tgb.svg" alt="Телеграм Дмитрий"></a>
-                                <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img
-                                        src="../wp-content/themes/hvac/img/wap.svg" alt="WhatsApp"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-                <div class="footer_bottom">
+        <div class="footer_bottom">
         <div class="wind-lines-overlay">
             <img src="../wp-content/themes/hvac/img/wind-blue-footer.svg" alt="Wind elements" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
         </div>
         <div class="container">
             <div class="footer_block">
                     <div class="footer_block_top">
-                        <a href="../index.html" class="logo">
-                                                    <div class="custom-logo-badge">
-                            <span class="custom-logo-text">MUNDO IGOR</span>
-                        </div>
-                        </a>
                         <div class="footer_menu_block">
                             <nav class="header-menu-container">
                                 <ul class="header-menu">
-                                    <li class="menu-item"><a href="../index.html">Выбрать услугу</a></li>
+                                    <li class="menu-item"><a href="../index.html#services-anchor">Выбрать услугу</a></li>
                                     <li class="menu-item"><a href="../konsultatsiya/index.html">Консультация</a></li>
                                     <li class="menu-item"><a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer">Mundo Climatico</a></li>
                                     <li class="menu-item"><a href="index.html">Примеры работ</a></li>
@@ -410,26 +659,17 @@
                         </div>
                     </div>
                     <div class="footer_block_bottom">
-                        <div class="footer_block_bottom_soc">
-                            Рассказываю про вентиляцию простыми словами и показываю процесс работы - <span>подпишись!</span>
-                            <div class="footer_soc_bottom">
-                                <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img
-                                        src="../wp-content/themes/hvac/img/tg.svg" alt="Телеграм"></a>
-                                <a href="https://t.me/Dima_Gudmaer" target="_blank" rel="noopener noreferrer"><img
-                                        src="../wp-content/themes/hvac/img/tg.svg" alt="Телеграм Дмитрий"></a>
-                                <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img
-                                        src="../wp-content/themes/hvac/img/wap.svg" alt="WhatsApp"></a>
-                            </div>
+                        <div class="footer_soc_bottom">
+                            <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="../wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
+                            <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img src="../wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Igor"></a>
+                            <a href="https://t.me/Dima_Gudmaer" target="_blank" rel="noopener noreferrer"><img src="../wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Dima"></a>
                         </div>
 
-
                         <div class="footer_block_bottom_info">
-                            <div>© 2010-2024 DMITRY HVAC. Все права защищены</div>
+                            <div>Copyright © 2018 - 2025 Mundo Climatico S.L.</div>
                             <div class="info">
                                 <a href="../politic/index.html">Политика конфидециальности</a>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
