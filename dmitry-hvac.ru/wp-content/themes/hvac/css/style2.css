@@ -417,7 +417,7 @@ a {
 .hero {
   margin-top: 24px;
   border-radius: 40px;
-  background: linear-gradient(rgba(12, 60, 140, 0.8), rgba(12, 60, 140, 0.8)), url("../img/инж.jpg");
+  background: linear-gradient(135deg, rgba(12, 60, 140, 0.8) 0%, rgba(26, 77, 163, 0.8) 100%), url("../img/%D0%B8%D0%BD%D0%B6.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -671,6 +671,8 @@ h2.title {
 
 h2.title span {
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #0C3C8C !important;
+  font-weight: 600;
 }
 
 .title_block {
@@ -713,14 +715,24 @@ h2.title span {
 }
 
 .footer_info_item {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 6px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-bottom: 10px;
-  position: relative; /* Для позиционирования псевдоэлемента */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(12, 60, 140, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+}
+
+.footer_info_item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(12, 60, 140, 0.15);
 }
 
 .footer_info_item::after {
@@ -734,28 +746,95 @@ h2.title span {
 }
 
 .footer_info_item_info {
-  font-size: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.footer_info_item_info_name {
+  text-align: left !important;
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+}
+
+.footer_info_item_info_contact {
+  text-align: left !important;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Стиль для ссылки Mundo Climatico */
+.mundoclimatico-link {
+  color: #47C5AD !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mundoclimatico-link:hover {
+  color: #3ba08c !important;
+  text-decoration: underline;
+}
+
+/* Убираем стили с телефонов */
+.footer_info_item_info_contact a {
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer_info_item_info_contact a:hover {
+  color: #0C3C8C;
+  text-decoration: underline;
+}
+
+/* Стили для email с курсором pointer */
+.footer_info_item_info_contact a[onclick*="copyEmail"] {
+  cursor: pointer;
+  color: #0C3C8C;
+}
+
+.footer_info_item_info_contact a[onclick*="copyEmail"]:hover {
+  color: #47C5AD;
+  text-decoration: underline;
+}
+
+/* Стили для ссылки адреса */
+.address-link {
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.address-link:hover {
+  color: #0C3C8C;
+  text-decoration: underline;
 }
 
 .footer_info {
   margin-top: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer_info_left,
+.footer_info_right {
+  display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 300px;
+}
+
+.footer_info_center {
+  width: 500px;
+  flex-shrink: 0;
 }
 
 .footer_info_item_digit {
@@ -775,10 +854,21 @@ h2.title span {
 
 .footer_soc img {
   width: 30px;
+  height: 30px;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  filter: brightness(1);
+  opacity: 1;
 }
+
+/* Специальные стили для иконок Telegram */
+.footer_soc img[src*="tg.svg"],
+.footer_soc img[src*="tgb.svg"] {
+  filter: brightness(1.2) contrast(1.2);
+}
+
+
 
 .footer_soc img:hover {
   opacity: 0.6;
@@ -787,14 +877,15 @@ h2.title span {
 
 .footer_bottom {
   position: relative;
-  height: 75vh;
+  height: 50vh;
   margin-top: 190px;
   padding-top: 60px;
-
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(135deg, rgba(12, 60, 140, 0.8) 0%, rgba(26, 77, 163, 0.8) 100%), url("../img/%D0%B4%D0%B8%D1%81%D0%BF%D0%B5%D1%82.jpg");
+  background-size: cover;
+  background-position: center;
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
@@ -804,9 +895,19 @@ h2.title span {
   align-items: end;
 }
 
+.wind-lines-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .footer_block {
   position: relative;
-  z-index: 5;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -819,49 +920,7 @@ h2.title span {
   color: #fff;
 }
 
-.circle1 {
-  width: 140vw;
-  height: 140vw;
-  background-color: #0C3C8C;
-  border-radius: 100%;
-  position: absolute;
-  top: 0vw;
-  z-index: 1;
-  left: -26vw;
-  scale: 1;
-}
 
-.circle2 {
-  width: 120vw;
-  height: 120vw;
-  background-color: #0C3C8C;
-  border-radius: 100%;
-  position: absolute;
-  top: 17vw;
-  z-index: 2;
-  right: -19vw;
-  scale: 1;
-}
-
-.circle3 {
-  width: 100vw;
-  height: 100vw;
-  background-color: #0C3C8C;
-  border-radius: 100%;
-  position: absolute;
-  top: 30vw;
-  z-index: 2;
-  right: -19vw;
-  scale: 1;
-}
-
-.circle1,
-.circle2,
-.circle3 {
-  -webkit-transform-origin: center center;
-  -ms-transform-origin: center center;
-  transform-origin: center center;
-}
 
 .footer_block_top {
   display: grid;
@@ -919,25 +978,23 @@ h2.title span {
 }
 
 .footer_soc_bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   margin-top: 30px;
 }
 
-.footer_soc_bottom img {
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+.footer_soc_bottom a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
 }
 
-.footer_soc_bottom img:hover {
-  opacity: 0.6;
-  scale: 0.9;
+.footer_soc_bottom img {
+  width: 30px;
+  height: 30px;
 }
 
 .footer_block_bottom_soc {
@@ -947,6 +1004,7 @@ h2.title span {
 
 .footer_block_bottom_soc span {
   font-family: "Pragmatica-Bold";
+  color: #47C5AD;
 }
 
 .footer_menu_block {
@@ -1636,6 +1694,8 @@ a:visited {
 
 .about_block_info_block_title span {
   font-family: "Pragmatica-Medium";
+  color: #20B2AA !important;
+  font-weight: 600;
 }
 
 .about_block_info_block_info {
@@ -3593,7 +3653,7 @@ ol li {
 .custom-logo-badge {
   display: flex;
   align-items: center;
-  background: #0C3C8C;
+  background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
   border-radius: 16px;
   padding: 16px 40px;
   margin-right: 24px;
@@ -3606,7 +3666,6 @@ ol li {
   font-size: 1rem;
   letter-spacing: 0.05em;
   font-family: sans-serif;
-  margin-right: 12px;
   white-space: nowrap;
   line-height: 1;
 }
@@ -3848,10 +3907,9 @@ ol li {
 .footer_block_top .custom-logo-badge {
   display: flex;
   align-items: center;
-  gap: 8px;
   background: #fff;
   border-radius: 16px;
-  padding: 16px 40px;
+  padding: 16px 24px;
   margin-right: 24px;
   height: 48px;
   box-sizing: border-box;
@@ -3869,15 +3927,7 @@ ol li {
   line-height: 1;
 }
 
-.footer_block_top .custom-logo-img img {
-  display: block;
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  background: #fff;
-  border-radius: 50%;
-  padding: 2px;
-}
+
 
 /* Стили для страницы Примеры работ */
 .projects_section {
@@ -3962,6 +4012,171 @@ ol li {
 }
 
 .header .menu a.active {
+  background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+
+/* Стили для выделения слов в контактах */
+.footer_info_item_info_name span {
+  background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.contact-form-title span {
+  background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* Стили для номеров телефонов */
+.phone-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phone-link {
+  display: block;
+  padding: 8px 12px;
+  background: rgba(12, 60, 140, 0.1);
+  border-radius: 8px;
+  text-decoration: none;
   color: #0C3C8C;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.phone-link:hover {
+  background: rgba(12, 60, 140, 0.2);
+}
+
+.phone-link:active {
+  background: rgba(12, 60, 140, 0.3);
+}
+
+/* Стили для формы контактов */
+.contact-form-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-input,
+.form-textarea {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #0C3C8C;
+  box-shadow: 0 0 0 2px rgba(12, 60, 140, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-submit {
+  margin-top: 8px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px 24px;
+  background: #0C3C8C;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #0a2d6b;
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Мобильные стили для номеров телефонов */
+@media screen and (max-width: 768px) {
+  .phone-link {
+    padding: 12px 16px;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  
+  .footer_info {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .footer_info_left,
+  .footer_info_right,
+  .footer_info_center {
+    width: 100%;
+  }
+  
+  .footer_info_item {
+    max-width: none;
+  }
+  
+  .contact-form-container {
+    max-width: none;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: bold;
 }

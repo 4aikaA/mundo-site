@@ -7,6 +7,95 @@
     <link rel="stylesheet" type="text/css" href="../wp-content/themes/hvac/css/style2.css" />
     <link rel="stylesheet" type="text/css" href="../wp-content/themes/hvac/css/splide.min.css" />
     
+    <style>
+    /* Специальные стили для баннера на странице Примеры работ */
+    .examples-hero {
+        display: block !important;
+        height: 40vw !important;
+        background: linear-gradient(rgba(12, 60, 140, 0.8), rgba(12, 60, 140, 0.8)), url("../wp-content/themes/hvac/img/инж.jpg") !important;
+        background-size: cover !important;
+        background-position: center !important;
+        margin-top: 24px !important;
+        border-radius: 40px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+    
+    .examples-hero::before {
+        content: "" !important;
+        position: absolute !important;
+        right: 0vw !important;
+        bottom: -8vw !important;
+        z-index: 1 !important;
+        background-image: url("../wp-content/themes/hvac/img/blur.png") !important;
+        width: 55vw !important;
+        height: 45vw !important;
+        background-size: cover !important;
+    }
+    
+    /* Принудительно показываем баннер на всех устройствах */
+    @media screen and (max-width: 900px) {
+        .examples-hero {
+            display: block !important;
+            height: 60vh !important;
+            border-radius: 20px !important;
+        }
+    }
+    
+    /* Стили для заголовка страницы в стиле главной страницы */
+    .page-header {
+        margin-top: 120px;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+    
+    .page-header-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .page-title {
+        font-size: 53px;
+        line-height: 53px;
+        font-family: "Pragmatica-Light";
+        margin-bottom: 16px;
+        color: #333;
+    }
+    
+            .page-title span {
+            font-family: "Pragmatica-Medium";
+            background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    
+    .page-description {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #666;
+        margin: 0;
+        font-weight: 300;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .page-header {
+            margin-top: 100px;
+            margin-bottom: 40px;
+        }
+        
+        .page-title {
+            font-size: 41px;
+            line-height: 41px;
+        }
+        
+        .page-description {
+            font-size: 16px;
+        }
+    }
+    </style>
+    
     <!-- jQuery должен загружаться первым -->
     <script src="../wp-content/themes/hvac/js/jquery-3.6.1.min.js"></script>
     
@@ -29,7 +118,6 @@
             <div class="menu_block">
                 <a href="../index.html" class="custom-logo-badge">
                     <span class="custom-logo-text">MUNDO IGOR</span>
-                    <span class="custom-logo-img"><img src="../wp-content/themes/hvac/img/logo.png" alt="MUNDO IGOR Logo" /></span>
                 </a>
                 <div class="menu">
                     <nav class="header-menu-container">
@@ -93,16 +181,12 @@
         </div>
     </div>
 
-    <!-- Main Banner -->
-    <section class="hero">
+    <!-- Page Header -->
+    <section class="page-header">
         <div class="container">
-            <div class="hero_content">
-                <div class="hero_content_top">
-                    <div class="hero_content_top_left">
-                        <h1 class="title">Примеры работ</h1>
-                        <div class="hero_descr">Наши реальные проекты по вентиляции и кондиционированию</div>
-                    </div>
-                </div>
+            <div class="page-header-content">
+                <div class="page-title"><span>Примеры</span> работ</div>
+                <div class="page-description">Наши реальные проекты по вентиляции и кондиционированию</div>
             </div>
         </div>
     </section>
@@ -256,7 +340,7 @@
                     <div class="footer_info_item_info">
                         <div class="footer_info_item_info_name">/наш онлайн магазин</div>
                         <div class="footer_info_item_info_contact">
-                            <a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer">Mundo Climatico - онлайн магазин климатического оборудования</a>
+                            <a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer" class="mundoclimatico-link">Mundo Climatico - онлайн магазин климатического оборудования</a>
                         </div>
                     </div>
                 </div>
@@ -273,7 +357,10 @@
                     <div class="footer_info_item_digit">03</div>
                     <div class="footer_info_item_info">
                         <div class="footer_info_item_info_name">/телефон</div>
-                        <a href="tel:+34663546600" class="footer_info_item_info_contact">+34 663-546-600</a>
+                        <div class="footer_info_item_info_contact phone-numbers">
+                            <a href="tel:+34613705466" class="phone-link">+34 613 70 54 66</a>
+                            <a href="tel:+34681990388" class="phone-link">+34 681 99 03 88</a>
+                        </div>
                     </div>
                 </div>
 
@@ -283,15 +370,12 @@
                         <div class="footer_info_item_info_name">/социальные сети</div>
                         <div class="footer_info_item_info_contact">
                             <div class="footer_soc">
-                                <a href="https://www.youtube.com/channel/UCIW5zrzBYpD2d-C-rYnl-zg" target="_blank"><img
-                                        src="../wp-content/themes/hvac/img/ytb.svg" alt="Ютуб"></a>
-                                <a href="https://t.me/dmitry_hvac" target="_blank"><img
+                                <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img
                                         src="../wp-content/themes/hvac/img/tgb.svg" alt="Телеграм"></a>
-                                <a href="https://vk.com/dmitry_hvac" target="_blank"><img
-                                        src="../wp-content/themes/hvac/img/vkb.svg" alt="ВКонтакте"></a>
-
-                                <a href="https://dzen.ru/dmitry_hvac" target="_blank"><img
-                                        src="../wp-content/themes/hvac/img/dzb.svg" alt=""></a>
+                                <a href="https://t.me/Dima_Gudmaer" target="_blank" rel="noopener noreferrer"><img
+                                        src="../wp-content/themes/hvac/img/tgb.svg" alt="Телеграм Дмитрий"></a>
+                                <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img
+                                        src="../wp-content/themes/hvac/img/wap.svg" alt="WhatsApp"></a>
                             </div>
                         </div>
                     </div>
@@ -300,18 +384,17 @@
         </div>
 
 
-        <div class="footer_bottom">
-            <div class="circle1"></div>
-            <div class="circle2"></div>
-            <div class="circle3"></div>
-            <div class="container">
-                <div class="footer_block">
+                <div class="footer_bottom">
+        <div class="wind-lines-overlay">
+            <img src="../wp-content/themes/hvac/img/wind-blue-footer.svg" alt="Wind elements" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+        </div>
+        <div class="container">
+            <div class="footer_block">
                     <div class="footer_block_top">
                         <a href="../index.html" class="logo">
-                            <div class="custom-logo-badge">
-                                <span class="custom-logo-text">MUNDO IGOR</span>
-                                <span class="custom-logo-img"><img src="../wp-content/themes/hvac/img/logo.png" alt="MUNDO IGOR Logo" /></span>
-                            </div>
+                                                    <div class="custom-logo-badge">
+                            <span class="custom-logo-text">MUNDO IGOR</span>
+                        </div>
                         </a>
                         <div class="footer_menu_block">
                             <nav class="header-menu-container">
@@ -330,12 +413,12 @@
                         <div class="footer_block_bottom_soc">
                             Рассказываю про вентиляцию простыми словами и показываю процесс работы - <span>подпишись!</span>
                             <div class="footer_soc_bottom">
-                                <a href="https://t.me/dmitry_hvac" target="_blank"><img
+                                <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img
                                         src="../wp-content/themes/hvac/img/tg.svg" alt="Телеграм"></a>
-                                <a href="https://vk.com/dmitry_hvac" target="_blank"><img
-                                        src="../wp-content/themes/hvac/img/vk.svg" alt="ВКонтакте"></a>
-                                <a href="https://www.youtube.com/channel/UCIW5zrzBYpD2d-C-rYnl-zg" target="_blank"><img
-                                        src="../wp-content/themes/hvac/img/yt.svg" alt="Ютуб"></a>
+                                <a href="https://t.me/Dima_Gudmaer" target="_blank" rel="noopener noreferrer"><img
+                                        src="../wp-content/themes/hvac/img/tg.svg" alt="Телеграм Дмитрий"></a>
+                                <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img
+                                        src="../wp-content/themes/hvac/img/wap.svg" alt="WhatsApp"></a>
                             </div>
                         </div>
 
@@ -510,7 +593,10 @@
         }
         
         .header .menu a.active {
-            color: #0C3C8C !important;
+            background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: bold !important;
         }
         
@@ -550,6 +636,46 @@
         .projects_section {
             margin-top: 0 !important;
             padding-top: 40px !important;
+        }
+        
+        /* Стили для номеров телефонов */
+        .phone-numbers {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .phone-link {
+            display: block;
+            padding: 8px 12px;
+            background: rgba(12, 60, 140, 0.1);
+            border-radius: 8px;
+            text-decoration: none;
+            background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .phone-link:hover {
+            background: rgba(12, 60, 140, 0.2);
+            transform: scale(1.02);
+        }
+        
+        .phone-link:active {
+            transform: scale(0.98);
+        }
+        
+        /* Мобильные стили для номеров телефонов */
+        @media screen and (max-width: 768px) {
+            .phone-link {
+                padding: 12px 16px;
+                font-size: 16px;
+                margin-bottom: 4px;
+            }
         }
     </style>
 </body>
