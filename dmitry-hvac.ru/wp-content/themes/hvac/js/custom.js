@@ -158,8 +158,10 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Setting up horizontal scroll for services');
         
         var isMouseDown = false;
+        var isTouching = false;
         var startX, scrollLeft;
 
+        // Mouse events
         container.addEventListener('mousedown', function(e) {
             isMouseDown = true;
             container.style.cursor = 'grabbing';
@@ -181,6 +183,25 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isMouseDown) return;
             e.preventDefault();
             var x = e.pageX - container.offsetLeft;
+            var walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch events for mobile
+        container.addEventListener('touchstart', function(e) {
+            isTouching = true;
+            startX = e.touches[0].pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener('touchend', function() {
+            isTouching = false;
+        });
+
+        container.addEventListener('touchmove', function(e) {
+            if (!isTouching) return;
+            e.preventDefault();
+            var x = e.touches[0].pageX - container.offsetLeft;
             var walk = (x - startX) * 2;
             container.scrollLeft = scrollLeft - walk;
         });
@@ -472,6 +493,209 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => delete servicesNextBtn.dataset.clickTimeout, 300);
             scrollServicesRight();
         });
+    }
+
+    // Обработчик для кнопок "Заказать расчет"
+    var orderButtons = document.querySelectorAll('.btnw, .btn');
+    console.log('Найдено кнопок:', orderButtons.length);
+    
+    orderButtons.forEach(function(button) {
+        console.log('Кнопка текст:', button.textContent.trim());
+        if (button.textContent.trim() === 'Заказать расчет') {
+            console.log('Добавляем обработчик для кнопки:', button);
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Создаем модальное окно с выбором способа связи
+                var modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.8);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 10000;
+                    backdrop-filter: blur(5px);
+                `;
+                
+                var modalContent = document.createElement('div');
+                modalContent.style.cssText = `
+                    background: white;
+                    padding: 40px;
+                    border-radius: 20px;
+                    max-width: 500px;
+                    width: 90%;
+                    text-align: center;
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                `;
+                
+                modalContent.innerHTML = `
+                    <h3 style="margin: 0 0 30px 0; color: #0C3C8C; font-size: 24px;">Выберите удобный способ связи:</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0&type=phone_number&app_absent=0" 
+                           target="_blank" rel="noopener noreferrer" 
+                           style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #25D366; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
+                            <img src="${window.location.pathname.includes('primery-rabot') ? '../' : ''}wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
+                            WhatsApp
+                        </a>
+                        
+                        <a href="https://t.me/igor_kuznetsov1" 
+                           target="_blank" rel="noopener noreferrer" 
+                           style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #0088CC; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
+                            <img src="${window.location.pathname.includes('primery-rabot') ? '../' : ''}wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
+                            Telegram Igor
+                        </a>
+                        
+                        <a href="https://t.me/Dima_Gudmaer" 
+                           target="_blank" rel="noopener noreferrer" 
+                           style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #0088CC; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
+                            <img src="${window.location.pathname.includes('primery-rabot') ? '../' : ''}wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
+                            Telegram Dima
+                        </a>
+                        
+                        <a href="tel:+34613705466" 
+                           style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #47C5AD; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            +34 613 70 54 66
+                        </a>
+                        
+                        <a href="tel:+34681990388" 
+                           style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #47C5AD; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            +34 681 99 03 88
+                        </a>
+                        
+                        <a href="#" onclick="copyEmail('info@climaprof.es'); return false;" 
+                           style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #0C3C8C; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; cursor: pointer;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            info@climaprof.es
+                        </a>
+                    </div>
+                    
+                    <button onclick="this.closest('.modal-overlay').remove()" 
+                            style="margin-top: 30px; padding: 10px 20px; background: #f0f0f0; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.3s ease;">
+                        Закрыть
+                    </button>
+                `;
+                
+                modal.className = 'modal-overlay';
+                modal.appendChild(modalContent);
+                document.body.appendChild(modal);
+                
+                // Закрытие по клику вне модального окна
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                });
+                
+                // Закрытие по Escape
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && document.body.contains(modal)) {
+                        modal.remove();
+                    }
+                });
+            });
+        }
+    });
+
+    // Обработчик для старых popup кнопок (если они есть)
+    var oldPopupButtons = document.querySelectorAll('.pop_up_form_btn a');
+    oldPopupButtons.forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            var href = this.getAttribute('href');
+            if (href && href !== '#') {
+                window.open(href, '_blank');
+            }
+        });
+    });
+
+    // Функция для копирования email
+    window.copyEmail = function(email) {
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(email).then(function() {
+                showNotification('Email скопирован в буфер обмена!');
+            }).catch(function(err) {
+                console.error('Ошибка копирования: ', err);
+                fallbackCopyTextToClipboard(email);
+            });
+        } else {
+            fallbackCopyTextToClipboard(email);
+        }
+    };
+
+    // Fallback для старых браузеров
+    function fallbackCopyTextToClipboard(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                showNotification('Email скопирован в буфер обмена!');
+            }
+        } catch (err) {
+            console.error('Ошибка копирования: ', err);
+        }
+        
+        document.body.removeChild(textArea);
+    }
+
+    // Функция для показа уведомления
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #47C5AD;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            z-index: 10000;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            animation: slideIn 0.3s ease;
+        `;
+        notification.textContent = message;
+        
+        // Добавляем CSS анимацию
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        document.body.appendChild(notification);
+        
+        // Удаляем уведомление через 3 секунды
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 3000);
     }
 
     console.log('All animations initialized');
