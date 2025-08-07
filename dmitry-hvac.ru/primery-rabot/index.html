@@ -8,14 +8,23 @@
     <meta property="og:title" content="MUNDO IGOR - Примеры работ по автоматизации и монтажу">
     <meta property="og:description" content="Реальные проекты по автоматизации, монтажу и обслуживанию инженерных систем">
     <meta property="og:image" content="../wp-content/themes/hvac/img/mundo-igor-preview.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dmitry-hvac.ru/primery-rabot/">
+    <meta property="og:site_name" content="MUNDO IGOR">
+    <meta property="og:locale" content="ru_RU">
     
     <!-- Twitter Card мета-теги -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MUNDO IGOR - Примеры работ по автоматизации и монтажу">
     <meta name="twitter:description" content="Реальные проекты по автоматизации, монтажу и обслуживанию инженерных систем">
     <meta name="twitter:image" content="../wp-content/themes/hvac/img/mundo-igor-preview.svg">
+    
+    <!-- Дополнительные мета-теги для принудительного обновления кэша -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     
     <title>MUNDO IGOR - Примеры работ по автоматизации и монтажу</title>
     <link rel="stylesheet" type="text/css" href="../wp-content/themes/hvac/css/style2.css" />
@@ -434,8 +443,8 @@
                             <li class="menu-item"><a href="../konsultatsiya/index.html">Консультация</a></li>
                             <li class="menu-item"><a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer">Mundo Climatico</a></li>
                             <li class="menu-item"><a href="index.html" class="active">Примеры работ</a></li>
-                            <li class="menu-item"><a href="../blog/index.html">Блог</a></li>
-                            <li class="menu-item"><a href="../index.html#contact-info">Контакты</a></li>
+                            <li class="menu-item"><a href="../about/index.html">О себе</a></li>
+                            <li class="menu-item"><a href="#contact-info">Контакты</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -459,8 +468,8 @@
                             <li class="menu-item"><a href="../konsultatsiya/index.html">Консультация</a></li>
                             <li class="menu-item"><a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer">Mundo Climatico</a></li>
                             <li class="menu-item"><a href="index.html" class="active">Примеры работ</a></li>
-                            <li class="menu-item"><a href="../blog/index.html">Блог</a></li>
-                            <li class="menu-item"><a href="../index.html#contact-info">Контакты</a></li>
+                            <li class="menu-item"><a href="../about/index.html">О себе</a></li>
+                            <li class="menu-item"><a href="#contact-info">Контакты</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -691,8 +700,8 @@
                                     <li class="menu-item"><a href="../konsultatsiya/index.html">Консультация</a></li>
                                     <li class="menu-item"><a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer">Mundo Climatico</a></li>
                                     <li class="menu-item"><a href="index.html">Примеры работ</a></li>
-                                    <li class="menu-item"><a href="../blog/index.html">Блог</a></li>
-                                    <li class="menu-item"><a href="../index.html#contact-info">Контакты</a></li>
+                                    <li class="menu-item"><a href="../about/index.html">О себе</a></li>
+                                    <li class="menu-item"><a href="#contact-info">Контакты</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -992,5 +1001,111 @@
             transform: translateY(-2px);
         }
     </style>
+
+    <!-- Модальное окно для консультации -->
+    <div id="consultationModal" class="consultation-modal">
+        <div class="consultation-modal-content">
+            <button class="consultation-modal-close">&times;</button>
+            
+            <div class="consultation-modal-header">
+                <h2 class="consultation-modal-title">Получить бесплатную консультацию</h2>
+            </div>
+            
+            <div class="consultation-modal-body">
+                <form class="consultation-form" onsubmit="submitConsultationForm(event)">
+                    <div class="consultation-form-group">
+                        <label class="consultation-form-label">Имя</label>
+                        <input type="text" class="consultation-form-input" name="name" required>
+                    </div>
+                    
+                    <div class="consultation-form-group">
+                        <label class="consultation-form-label">Номер телефона</label>
+                        <input type="tel" class="consultation-form-input" name="phone" placeholder="+34 XXX XXX XXX" required>
+                    </div>
+                    
+                    <button type="submit" class="consultation-form-submit">Перезвоните мне</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Функция для открытия модального окна консультации
+        function openConsultationModal() {
+            const modal = document.getElementById('consultationModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Функция для закрытия модального окна консультации
+        function closeConsultationModal() {
+            const modal = document.getElementById('consultationModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Функция для отправки формы консультации
+        function submitConsultationForm(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Получаем данные из формы
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            
+            // Формируем email с помощью mailto
+            const subject = 'Заявка на бесплатную консультацию - MUNDO IGOR';
+            const body = `Имя: ${name}\nТелефон: ${phone}\n\nЗаявка на бесплатную консультацию с сайта MUNDO IGOR`;
+            
+            // Создаем ссылку mailto
+            const mailtoLink = `mailto:info@climaprof.es?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Открываем почтовый клиент
+            window.open(mailtoLink);
+            
+            // Показываем уведомление
+            showNotification('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+            
+            // Очищаем форму
+            form.reset();
+            
+            // Закрываем модальное окно
+            closeConsultationModal();
+        }
+
+        // Обработчики событий для модального окна консультации
+        document.addEventListener('DOMContentLoaded', function() {
+            // Добавляем обработчики кликов на кнопки "Консультация"
+            const consultationLinks = document.querySelectorAll('a[href*="konsultatsiya"]');
+            consultationLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openConsultationModal();
+                });
+            });
+
+            // Обработчики для модального окна
+            const modal = document.getElementById('consultationModal');
+            const closeBtn = modal.querySelector('.consultation-modal-close');
+
+            closeBtn.addEventListener('click', closeConsultationModal);
+
+            // Закрытие по клику вне модального окна
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeConsultationModal();
+                }
+            });
+
+            // Закрытие по Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeConsultationModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
