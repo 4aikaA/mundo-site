@@ -162,7 +162,15 @@ html {
   color: #47C5AD !important;
 }
 
+/* Убираем постоянное выделение для current_page_item */
 .menu .current_page_item a {
+  background-color: transparent;
+  border-radius: 16px !important;
+  color: #5a6064;
+}
+
+/* Добавляем стили для активного состояния при нажатии */
+.menu li a.active {
   background-color: #e7eef2;
   border-radius: 16px !important;
   color: #000;
@@ -2307,6 +2315,26 @@ a:visited {
   transition: all 0.3s ease;
 }
 
+/* Ограничение размера иконок в кнопках WhatsApp */
+.wap img {
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: contain;
+}
+
+/* Общие стили для иконок в социальных кнопках */
+.hero_soc img,
+.footer_soc img,
+.footer_soc_bottom img {
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: contain;
+}
+
 .tgm {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -2322,6 +2350,15 @@ a:visited {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+/* Ограничение размера иконок в кнопках Telegram */
+.tgm img {
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: contain;
 }
 
 .wap:hover {
@@ -2838,6 +2875,37 @@ ol li {
     border-radius: 16px;
     height: 180px !important;
   }
+  
+  /* Адаптируем мобильный баннер для очень маленьких экранов */
+  .hero_mob {
+    height: 60vh;
+    min-height: 400px;
+    margin: 10px;
+  }
+  
+  .hero_mob h1.title {
+    font-size: 24px;
+  }
+  
+  .hero_mob .hero_descr {
+    font-size: 14px;
+  }
+  
+  /* Адаптируем плашки услуг */
+  .services_block_item {
+    min-width: 250px;
+  }
+  
+  .work_slide {
+    min-width: 250px;
+  }
+  
+  /* Адаптируем футер */
+  .footer_block_bottom .btn,
+  .footer_block_bottom .make {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 900px) {
   .hero_content_bottom {
@@ -2869,39 +2937,57 @@ ol li {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     position: relative;
     overflow: hidden;
-    min-height: 400px;
+    min-height: 500px;
+    margin: 20px;
+    box-sizing: border-box;
   }
   
   .hero_mob .hero_content {
-    padding: 20px;
+    padding: 30px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   
   .hero_mob .hero_content_top {
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
+    width: 100%;
+    max-width: 400px;
   }
   
   .hero_mob .hero_content_top_left {
     text-align: center;
+    width: 100%;
   }
   
   .hero_mob h1.title {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.2;
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   
   .hero_mob .hero_descr {
     font-size: 16px;
     line-height: 1.4;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
   }
   
   .hero_mob .hero_soc {
     flex-direction: row;
     justify-content: center;
     gap: 20px;
+    margin-top: 20px;
   }
   
   .hero {
@@ -2955,6 +3041,7 @@ ol li {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    touch-action: pan-x;
   }
   
   .services_block::-webkit-scrollbar {
@@ -2968,12 +3055,15 @@ ol li {
     min-width: max-content;
     touch-action: pan-x;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
   
   .services_block_item {
     min-width: 280px;
     flex-shrink: 0;
     scroll-snap-align: start;
+    touch-action: pan-x;
   }
   
   .services_block_nav {
@@ -3924,23 +4014,7 @@ ol li {
   padding-top: 20px !important;
 }
 
-/* Специальные правила для service-install */
-#service-install .services_block_item_bottom {
-  min-height: 120px !important;
-  height: 120px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  gap: 12px !important;
-  margin-top: auto !important;
-  padding-top: 20px !important;
-}
-
-#service-install .services_block_item_bottom > div:last-child {
-  display: flex !important;
-  gap: 12px !important;
-  align-items: center !important;
-}
+/* Специальные правила для service-install удалены для единообразия */
 
 .btn-outline {
   background: #fff;
@@ -4311,6 +4385,32 @@ ol li {
     flex-direction: column;
     gap: 15px;
   }
+  
+  /* Показываем кнопки в футере на мобильных */
+  .footer_block_bottom .btn {
+    display: block !important;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .footer_block_bottom .make {
+    display: block !important;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  /* Адаптируем логотип в футере */
+  .footer_block_top .custom-logo-badge {
+    width: 100%;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .footer_block_top .custom-logo-text {
+    font-size: 1.2rem;
+  }
 }
 
 .gradient-text {
@@ -4342,9 +4442,9 @@ ol li {
 
 .service-modal-content {
     background: white;
-    max-width: 800px;
-    width: 90%;
-    max-height: 90vh;
+    max-width: 1000px;
+    width: 95%;
+    max-height: 95vh;
     overflow-y: auto;
     border-radius: 20px;
     position: relative;
@@ -4567,11 +4667,19 @@ ol li {
         width: 100%;
     }
     
+    .service-modal-buttons .btn-consultation {
+        order: 3;
+        background: transparent !important;
+        color: #0C3C8C !important;
+        border: 2px solid #0C3C8C;
+    }
+    
     .service-modal-buttons .btn-outline {
         order: 1;
     }
     
-    .service-modal-buttons .btn-primary {
+    .service-modal-buttons .btn-primary,
+    .service-modal-buttons .btn-consultation {
         order: 2;
     }
     
@@ -4582,6 +4690,8 @@ ol li {
     .service-modal-buttons > div:nth-child(2) {
         order: 2;
         width: 100%;
+        flex-direction: column;
+        gap: 12px;
     }
     
     .service-modal-buttons > div:last-child {
@@ -4920,5 +5030,330 @@ ol li {
     
     .about-services {
         padding: 20px;
-    }
+  }
 }
+
+/* Стили для активного состояния кнопки "Выбрать услугу" в бургер-меню */
+.burger_menu .header-menu a.active {
+  background-color: #e7eef2;
+  border-radius: 16px !important;
+  color: #000;
+}
+
+/* Стили для расширенной информации о компании */
+.company-info {
+  margin-top: 50px;
+  padding: 30px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+}
+
+.company-info h3 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.company-info h3 .highlight {
+  color: #0C3C8C;
+  font-weight: bold;
+}
+
+.info-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h4 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.info-section h4 .highlight {
+  color: #0C3C8C;
+  font-weight: bold;
+}
+
+.info-section p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.examples-link {
+  text-align: center;
+  margin: 25px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 100%);
+  border-radius: 15px;
+  color: white;
+}
+
+.examples-link .btn {
+  margin-bottom: 15px;
+  background: white;
+  color: #0C3C8C;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.examples-link .btn:hover {
+  background: #0C3C8C;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(12, 60, 140, 0.3);
+}
+
+.examples-link p {
+  color: white;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Стили для сворачиваемых блоков */
+.collapsible .collapsible-content {
+  display: none;
+  padding-top: 15px;
+}
+
+.collapse-btn {
+  background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.collapse-btn:hover {
+  background: linear-gradient(135deg, #47C5AD 0%, #1a4da3 50%, #0C3C8C 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(71, 197, 173, 0.3);
+}
+
+.info-section.expanded .collapse-btn {
+  background: linear-gradient(135deg, #47C5AD 0%, #1a4da3 50%, #0C3C8C 100%);
+}
+
+/* Адаптивность для мобильных устройств */
+
+
+@media screen and (max-width: 768px) {
+  .company-info {
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  .company-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .info-section {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .examples-link {
+    padding: 15px;
+  }
+  
+  /* Адаптируем кнопки на мобильных */
+  .examples-link .btn {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+  
+  .collapse-btn {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+  
+  /* Адаптируем заголовки */
+  .info-section h4 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  /* Адаптируем текст */
+  .info-section p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+}
+
+/* Стили для кнопки "Консультация" в модальном окне */
+.btn-consultation {
+  background: transparent !important;
+  color: #0C3C8C !important;
+  border: 2px solid #0C3C8C;
+  box-shadow: 0 2px 8px rgba(12, 60, 140, 0.2);
+  transition: all 0.3s ease;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-consultation:hover {
+  background: #0C3C8C !important;
+  color: white !important;
+  border-color: #0C3C8C;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(12, 60, 140, 0.3);
+}
+
+/* Улучшаем читаемость текста в модальном окне */
+.service-modal-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: justify;
+  padding: 0 15px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.service-modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 0 0 20px 20px;
+}
+
+.service-modal-title {
+  color: #0C3C8C;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.service-modal-specialization {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid #0C3C8C;
+}
+
+.service-modal-specialization h3 {
+  color: #0C3C8C;
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-modal-specialization ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-modal-specialization li {
+  padding: 8px 0 8px 25px;
+  border-bottom: 1px solid #e9ecef;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.service-modal-specialization li:last-child {
+  border-bottom: none;
+}
+
+.service-modal-specialization li:before {
+  content: "✓";
+  color: #47C5AD;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  font-size: 16px;
+}
+
+
+
+
+
+/* Стили для элементов преимуществ */
+.advantage-item {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #47C5AD;
+  transition: all 0.3s ease;
+}
+
+.advantage-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(71, 197, 173, 0.2);
+}
+
+.advantage-item h4 {
+  color: #0C3C8C;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  padding: 0;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+.advantage-item p {
+  color: #2c3e50;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Мобильные стили для галочек */
+@media screen and (max-width: 768px) {
+  .service-modal-specialization li {
+    padding: 8px 0 8px 20px;
+  }
+  
+  .service-modal-specialization li:before {
+    left: 0;
+    font-size: 14px;
+  }
+  
+  .advantage-item {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .advantage-item h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .advantage-item p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+

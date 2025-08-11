@@ -37,19 +37,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Анимация для advantage_tab_item
-    gsap.utils.toArray('.advantage_tab_item').forEach(item => {
-        gsap.from(item, {
-            duration: .3,
-            y: 30,
-            opacity: 0,
-            scrollTrigger: {
-                trigger: item,
-                start: "top bottom-=100",
-                toggleActions: "play none none none"
-            }
+    // Анимация для advantage_tab_item (если элементы существуют)
+    var advantageTabItems = document.querySelectorAll('.advantage_tab_item');
+    if (advantageTabItems.length > 0) {
+        gsap.utils.toArray('.advantage_tab_item').forEach(item => {
+            gsap.from(item, {
+                duration: .3,
+                y: 30,
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top bottom-=100",
+                    toggleActions: "play none none none"
+                }
+            });
         });
-    });
+    }
 
     // Функциональность для advantage_tab_item_info_block_title
     document.querySelectorAll('.advantage_tab_item_info_block_title').forEach(function(titleBlock, index) {
@@ -235,11 +238,13 @@ document.addEventListener('DOMContentLoaded', function() {
         var slides = document.querySelectorAll('.services_block_item');
         var currentSlide = 0;
         var autoSlideInterval;
-        var isHovered = false;
+        var isAutoSlideDisabled = false;
 
         if (slides.length > 0) {
             function nextSlide() {
-                if (isHovered) return;
+                if (isAutoSlideDisabled) {
+                    return;
+                }
                 
                 currentSlide = (currentSlide + 1) % slides.length;
                 var slideWidth = slides[0].offsetWidth + 16;
@@ -251,29 +256,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
 
-            container.addEventListener('mouseenter', function() {
-                isHovered = true;
+            function stopAutoSlide() {
                 if (autoSlideInterval) {
                     clearInterval(autoSlideInterval);
+                    autoSlideInterval = null;
                 }
+            }
+
+            function startAutoSlide() {
+                if (autoSlideInterval || isAutoSlideDisabled) return;
+                autoSlideInterval = setInterval(nextSlide, 6000);
+            }
+
+            // Обработчик для контейнера
+            container.addEventListener('mouseenter', function() {
+                stopAutoSlide();
             });
 
             container.addEventListener('mouseleave', function() {
-                isHovered = false;
                 setTimeout(function() {
-                    if (!isHovered) {
+                    if (!isAutoSlideDisabled) {
                         startAutoSlide();
                     }
                 }, 1000);
             });
 
-            function startAutoSlide() {
-                if (autoSlideInterval) {
-                    clearInterval(autoSlideInterval);
-                }
-                autoSlideInterval = setInterval(nextSlide, 3000);
+            // Отключаем автолистание при клике на стрелки
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    isAutoSlideDisabled = true;
+                    stopAutoSlide();
+                });
             }
 
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    isAutoSlideDisabled = true;
+                    stopAutoSlide();
+                });
+            }
+
+            // Запускаем автолистание через 2 секунды
             setTimeout(startAutoSlide, 2000);
         }
     }, 100);
@@ -540,21 +563,21 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0&type=phone_number&app_absent=0" 
                            target="_blank" rel="noopener noreferrer" 
                            style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #25D366; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
-                            <img src="${window.location.pathname.includes('primery-rabot') ? '../' : ''}wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
+                            <img src="wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px;">
                             WhatsApp
                         </a>
                         
                         <a href="https://t.me/igor_kuznetsov1" 
                            target="_blank" rel="noopener noreferrer" 
                            style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #0088CC; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
-                            <img src="${window.location.pathname.includes('primery-rabot') ? '../' : ''}wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
+                            <img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram" style="width: 24px; height: 24px;">
                             Telegram Igor
                         </a>
                         
                         <a href="https://t.me/Dima_Gudmaer" 
                            target="_blank" rel="noopener noreferrer" 
                            style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #0088CC; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
-                            <img src="${window.location.pathname.includes('primery-rabot') ? '../' : ''}wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
+                            <img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram" style="width: 24px; height: 24px;">
                             Telegram Dima
                         </a>
                         
@@ -583,7 +606,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </a>
                     </div>
                     
-                    <button onclick="this.closest('.modal-overlay').remove()" 
+                    <button onclick="this.closest('div[style*=\'position: fixed\']').remove()" 
                             style="margin-top: 30px; padding: 10px 20px; background: #f0f0f0; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.3s ease;">
                         Закрыть
                     </button>
@@ -698,30 +721,171 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
+    // Функциональность для выделения кнопки "Выбрать услугу" при нажатии
+    const servicesButtons = document.querySelectorAll('a[href="#services-anchor"]');
+    const burgerServicesButton = document.querySelector('a[href="index.html"]'); // Кнопка в бургер-меню
+    
+    // Функция для выделения активной кнопки
+    function highlightActiveButton() {
+        // Убираем активный класс у всех кнопок меню
+        document.querySelectorAll('.header-menu a').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // Проверяем текущий URL и выделяем соответствующую кнопку
+        const currentPath = window.location.pathname;
+        const currentHash = window.location.hash;
+        
+        console.log('Current path:', currentPath);
+        console.log('Current hash:', currentHash);
+        
+        if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/')) {
+            // Если мы на главной странице
+            console.log('На главной странице');
+            if (currentHash === '#services-anchor') {
+                // Если есть якорь на услуги, выделяем кнопку "Выбрать услугу"
+                console.log('Выделяем кнопку "Выбрать услугу" (с якорем)');
+                servicesButtons.forEach(button => button.classList.add('active'));
+            } else if (currentHash === '#contact-info') {
+                // Если есть якорь на контакты, выделяем кнопку "Контакты"
+                console.log('Выделяем кнопку "Контакты"');
+                const contactButtons = document.querySelectorAll('a[href="#contact-info"]');
+                contactButtons.forEach(button => button.classList.add('active'));
+            } else if (currentHash === '') {
+                // Если на главной странице без якоря, выделяем кнопку "Выбрать услугу" по умолчанию
+                console.log('Выделяем кнопку "Выбрать услугу" (по умолчанию)');
+                servicesButtons.forEach(button => button.classList.add('active'));
+            }
+        } else if (currentPath.includes('/about/')) {
+            // Если мы на странице "О себе"
+            console.log('На странице "О себе"');
+            const aboutButtons = document.querySelectorAll('a[href="about/index.html"], a[href="../about/index.html"]');
+            aboutButtons.forEach(button => button.classList.add('active'));
+        } else if (currentPath.includes('/primery-rabot/')) {
+            // Если мы на странице "Примеры работ"
+            console.log('На странице "Примеры работ"');
+            const examplesButtons = document.querySelectorAll('a[href="primery-rabot/index.html"], a[href="../primery-rabot/index.html"]');
+            examplesButtons.forEach(button => button.classList.add('active'));
+        } else if (currentPath.includes('/konsultatsiya/')) {
+            // Если мы на странице "Консультация"
+            console.log('На странице "Консультация"');
+            const consultationButtons = document.querySelectorAll('a[href="konsultatsiya/index.html"], a[href="../konsultatsiya/index.html"]');
+            consultationButtons.forEach(button => button.classList.add('active'));
+        }
+        
+        // Проверяем, если мы на главной странице и есть якорь на контакты
+        if ((currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/')) && currentHash === '#contact-info') {
+            console.log('На главной странице, секция контакты');
+            const contactButtons = document.querySelectorAll('a[href="#contact-info"]');
+            contactButtons.forEach(button => button.classList.add('active'));
+        }
+        
+        // Убираем дублирующую логику, так как кнопка "Выбрать услугу" уже выделяется выше
+    }
+    
+    // Вызываем функцию при загрузке страницы
+    highlightActiveButton();
+    
+    // Обработчики для кнопок
+    servicesButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Убираем активный класс у всех кнопок меню
+            document.querySelectorAll('.header-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Добавляем активный класс к нажатой кнопке
+            this.classList.add('active');
+        });
+    });
+    
+    // Обработка для кнопки в бургер-меню
+    if (burgerServicesButton) {
+        burgerServicesButton.addEventListener('click', function(e) {
+            // Убираем активный класс у всех кнопок меню
+            document.querySelectorAll('.header-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Добавляем активный класс к нажатой кнопке
+            this.classList.add('active');
+        });
+    }
+    
+    // Убираем дублирующиеся обработчики - оставляем только один общий обработчик для всех кнопок
+    const menuButtons = document.querySelectorAll('.header-menu a');
+    menuButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Убираем активный класс у всех кнопок меню
+            document.querySelectorAll('.header-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Добавляем активный класс к нажатой кнопке
+            this.classList.add('active');
+        });
+    });
+    
+    // Обработка изменения хэша (для якорных ссылок)
+    window.addEventListener('hashchange', function() {
+        const currentHash = window.location.hash;
+        
+        // Убираем активный класс у всех кнопок меню
+        document.querySelectorAll('.header-menu a').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        if (currentHash === '#services-anchor') {
+            // Если перешли к якорю услуг, выделяем кнопку "Выбрать услугу"
+            console.log('Hash changed to services');
+            servicesButtons.forEach(button => button.classList.add('active'));
+        } else if (currentHash === '#contact-info') {
+            // Если перешли к якорю контактов, выделяем кнопку "Контакты"
+            console.log('Hash changed to contacts');
+            const contactButtons = document.querySelectorAll('a[href="#contact-info"]');
+            contactButtons.forEach(button => button.classList.add('active'));
+        } else if (currentHash === '') {
+            // Если нет якоря, выделяем кнопку "Выбрать услугу" по умолчанию
+            console.log('Hash cleared, highlighting services by default');
+            servicesButtons.forEach(button => button.classList.add('active'));
+        }
+    });
+
     console.log('All animations initialized');
 });
 
-// Анимация кругов при движении мыши
+// Анимация кругов при движении мыши (если элементы существуют)
 document.addEventListener("mousemove", function(e) {
     var mouseX = e.clientX;
     var mouseY = e.clientY;
 
     if (typeof gsap !== 'undefined') {
-        gsap.to(".circle1", {
-            duration: 0.5,
-            x: (mouseX - window.innerWidth / 2) / 20,
-            ease: "power2.out"
-        });
-        gsap.to(".circle2", {
-            duration: 0.5,
-            x: (mouseX - window.innerWidth / 2) / 30,
-            ease: "power2.out"
-        });
-        gsap.to(".circle3", {
-            duration: 0.5,
-            x: (mouseX - window.innerWidth / 2) / 40,
-            ease: "power2.out"
-        });
+        // Проверяем существование элементов перед анимацией
+        var circle1 = document.querySelector(".circle1");
+        var circle2 = document.querySelector(".circle2");
+        var circle3 = document.querySelector(".circle3");
+        
+        if (circle1) {
+            gsap.to(".circle1", {
+                duration: 0.5,
+                x: (mouseX - window.innerWidth / 2) / 20,
+                ease: "power2.out"
+            });
+        }
+        if (circle2) {
+            gsap.to(".circle2", {
+                duration: 0.5,
+                x: (mouseX - window.innerWidth / 2) / 30,
+                ease: "power2.out"
+            });
+        }
+        if (circle3) {
+            gsap.to(".circle3", {
+                duration: 0.5,
+                x: (mouseX - window.innerWidth / 2) / 40,
+                ease: "power2.out"
+            });
+        }
     }
 });
 
