@@ -100,12 +100,195 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
     
     <!-- Custom JavaScript -->
     <script src="wp-content/themes/hvac/js/custom.js"></script>
+    
+
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="wp-content/themes/hvac/css/style2.css" />
+    
+    <!-- Стили для раздела контактов -->
+    <style>
+        /* Стили для плашек контактов - только необходимые */
+        .footer_info_item {
+            max-width: 350px;
+            padding: 20px;
+        }
+        
+        /* Layout для контактов */
+        .footer_info {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            width: 100%;
+        }
+        
+        .footer_info_left,
+        .footer_info_right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+        }
+        
+        .footer_info_left {
+            padding-right: 40px;
+        }
+        
+        .footer_info_right {
+            padding-left: 40px;
+        }
+        
+        .footer_info_center {
+            flex: 1;
+        }
+        
+        /* Стили для формы контактов */
+        .contact-form-container {
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            box-sizing: border-box;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #0C3C8C;
+            box-shadow: 0 0 0 2px rgba(12, 60, 140, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px 24px;
+            background: #0C3C8C;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: #0a2d6b;
+            transform: translateY(-1px);
+        }
+        
+        /* Стили для кнопок футера */
+        .footer_menu_block {
+            display: block;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer_menu_block .header-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer_menu_block .header-menu li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer_menu_block .header-menu a {
+            display: block;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333 !important;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            min-width: 120px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer_menu_block .header-menu a:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Мобильные стили */
+        @media screen and (max-width: 768px) {
+            .footer_info_item {
+                max-width: none;
+            }
+            
+            .contact-form-container {
+                max-width: none;
+            }
+            
+            .footer_menu_block .header-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        @media screen and (max-width: 900px) {
+            .footer_info_left,
+            .footer_info_right {
+                padding: 0;
+            }
+        }
+    </style>
     
     <!-- Стили для popup -->
     <style>
@@ -256,7 +439,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 
                 <div class="burger_menu_container">
                     <div class="menu">
-                        <nav class="header-menu-container"><ul id="menu-header_menu" class="header-menu"><li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-57"><a href="index.html">Выбрать услугу</a></li>
+                        <nav class="header-menu-container"><ul id="menu-header_menu" class="header-menu"><li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-57"><a href="#services-anchor">Выбрать услугу</a></li>
 <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="konsultatsiya/index.html">Консультация</a></li>
 <li id="menu-item-901" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-901"><a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer">Mundo Climatico</a></li>
 <li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="primery-rabot/index.html">Примеры работ</a></li>
@@ -265,7 +448,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 </ul></nav>
                     </div>
 
-                    <div class="btn">Заказать расчет</div>
+                    <div class="btn" onclick="openOrderModal()">Заказать расчет</div>
                 </div>
 
             </div>
@@ -334,10 +517,65 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
             var burger = document.querySelector('.burger');
             var menu = document.querySelector('.burger_menu');
 
-            burger.addEventListener('click', function() {
-                burger.classList.toggle('active');
-                menu.classList.toggle('active');
+                    burger.addEventListener('click', function() {
+            burger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+        
+        // Обработка кликов по ссылкам в бургер меню
+        var burgerMenuLinks = menu.querySelectorAll('a');
+        burgerMenuLinks.forEach(function(link) {
+            // Добавляем обработчик для всех ссылок, ведущих на другие страницы
+            link.addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
+                if (href && !href.startsWith('#') && !href.includes('index.html#')) {
+                    // Если это ссылка на другую страницу, очищаем модальные окна
+                    forceCloseAllModals();
+                }
             });
+            
+            link.addEventListener('click', function(e) {
+                
+                // Если это якорная ссылка на текущей странице
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    var targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        // Плавная прокрутка к элементу
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                    // Закрываем бургер меню
+                    burger.classList.remove('active');
+                    menu.classList.remove('active');
+                } else if (href.includes('index.html') && href.includes('#')) {
+                    // Если это ссылка на главную страницу с якорем
+                    e.preventDefault();
+                    var anchor = href.split('#')[1];
+                    if (anchor) {
+                        var targetElement = document.querySelector('#' + anchor);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                    // Закрываем бургер меню
+                    burger.classList.remove('active');
+                    menu.classList.remove('active');
+                } else if (href.includes('konsultatsiya/index.html')) {
+                    // Если это ссылка на страницу консультации
+                    // Закрываем бургер меню перед переходом
+                    burger.classList.remove('active');
+                    menu.classList.remove('active');
+                    // Принудительно очищаем все модальные окна
+                    forceCloseAllModals();
+                }
+            });
+        });
         });
         </script>
 
@@ -353,12 +591,29 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
             // Функция для открытия popup
             function openPopup() {
                 popup.classList.add('pop_up_active');
+                document.body.style.overflow = 'hidden';
             }
 
-            // Функция для закрытия popup
-            function closePopup() {
-                popup.classList.remove('pop_up_active');
-            }
+                    // Функция для закрытия popup
+        function closePopup() {
+            popup.classList.remove('pop_up_active');
+            document.body.style.overflow = '';
+            // Очищаем все активные состояния
+            var allModals = document.querySelectorAll('.pop_up_active');
+            allModals.forEach(function(modal) {
+                modal.classList.remove('pop_up_active');
+            });
+            
+            // Дополнительная очистка - принудительно скрываем модальное окно
+            setTimeout(function() {
+                if (!popup.classList.contains('pop_up_active')) {
+                    popup.style.display = 'none';
+                    popup.style.opacity = '0';
+                    popup.style.visibility = 'hidden';
+                    popup.style.pointerEvents = 'none';
+                }
+            }, 300);
+        }
 
             // Добавляем обработчик событий на родительский элемент для делегирования
             document.body.addEventListener('click', function(event) {
@@ -372,13 +627,21 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 
             // Обработчик событий для кнопки закрытия
             if (closeBtn) {
-                closeBtn.addEventListener('click', closePopup);
+                closeBtn.addEventListener('click', function() {
+                    closePopup();
+                });
             }
 
             // Обработчик событий для клика вне формы
-            window.addEventListener('click', function(event) {
-                if (!popupForm.contains(event.target) && !event.target.matches('.btn') && !event.target
-                    .closest('.btnopen')) {
+            popup.addEventListener('click', function(event) {
+                if (event.target === popup) {
+                    closePopup();
+                }
+            });
+            
+            // Закрытие по Escape
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && popup.classList.contains('pop_up_active')) {
                     closePopup();
                 }
             });
@@ -398,6 +661,40 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 
         // Добавление обработчика событий клика к элементу .burger
         burger.addEventListener('click', toggleBodyScroll);
+        
+        // Очистка модальных окон при переходе на другие страницы
+        window.addEventListener('beforeunload', function() {
+            forceCloseAllModals();
+        });
+        
+        // Функция для открытия модального окна заказа
+        function openOrderModal() {
+            var popup = document.querySelector('.pop_up');
+            if (popup) {
+                popup.classList.add('pop_up_active');
+                document.body.style.overflow = 'hidden';
+                // Закрываем бургер меню при открытии модального окна
+                var burger = document.querySelector('.burger');
+                var menu = document.querySelector('.burger_menu');
+                if (burger && menu) {
+                    burger.classList.remove('active');
+                    menu.classList.remove('active');
+                }
+            }
+        }
+        
+        // Функция для принудительной очистки всех модальных окон
+        function forceCloseAllModals() {
+            var allModals = document.querySelectorAll('.pop_up');
+            allModals.forEach(function(modal) {
+                modal.classList.remove('pop_up_active');
+                modal.style.display = 'none';
+                modal.style.opacity = '0';
+                modal.style.visibility = 'hidden';
+                modal.style.pointerEvents = 'none';
+            });
+            document.body.style.overflow = '';
+        }
         </script>
 
 <style>
@@ -730,7 +1027,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 1" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/mercedez-benz.png" alt="Сервисный центр Mercedez-Benz">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Сервисный центр "Mercedez-Benz"</div>
+                        <div class="work_item_title">Сервисный центр</div>
                         <div class="work_item_descr">Монтаж системы кондиционирования в сервисном центре по ремонту грузовых автомобилей "Mercedez-Benz"</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -738,7 +1035,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 2" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/cinema-kurortny.jpg" alt="Кинотеатр Курортный">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Кинотеатр "Курортный"</div>
+                        <div class="work_item_title">Кинотеатр</div>
                         <div class="work_item_descr">Монтаж и сервисное обслуживание системы вентиляции с рекуперацией тепла, систем кондиционирования большого и малого залов кинотеатра</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -746,7 +1043,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 3" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/sanatorium-white-nights.png" alt="Санаторий Белые Ночи">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Санаторий "Белые Ночи". Обособленное подразделение СОГАЗ</div>
+                        <div class="work_item_title">Санаторий</div>
                         <div class="work_item_descr">Монтаж и обслуживание систем вентиляции бассейна, главного корпуса, системы кондиционирования санатория. Проектирование и монтаж системы дымоудаления и подпора воздуха в лифтовые тамбуры</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -754,7 +1051,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 4" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/nhv-rus.png" alt="Завод НВХ РУС">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Завод НВХ РУС. Поставщик завода Hyundai</div>
+                        <div class="work_item_title">Завод</div>
                         <div class="work_item_descr">Разработка проекта и автоматизация системы вентиляции по тех.заданию Заказчика</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -762,7 +1059,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 5" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/boiler-1000m2.png" alt="Котельная жилого дома 1000м2">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Котельная жилого дома 1000м²</div>
+                        <div class="work_item_title">Котельная жилого дома</div>
                         <div class="work_item_descr">Монтаж и обслуживание систем отопления и вентиляции жилого комплекса</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -770,7 +1067,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 6" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/fresh-fitnes.jpg" alt="Фитнес клуб Фреш фитнес">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Фитнес клуб "Фреш фитнес"</div>
+                        <div class="work_item_title">Фитнес клуб</div>
                         <div class="work_item_descr">Комплекс работ по проектированию строительству и реконструкции инженерных систем здания</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -778,7 +1075,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 7" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/WILLIAM-BASS PUB.jpg" alt="Ресторан WILLIAM BASS PUB">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Ресторан "WILLIAM BASS PUB" г. Санкт-Петербург</div>
+                        <div class="work_item_title">Ресторан</div>
                         <div class="work_item_descr">Монтаж и обслуживание системы приточно-вытяжной вентиляции c центральнеым охлаждением 54 кВт на базе оборудования Wesper. Монтаж системы локальной вытяжной вентиляции зоны горячего цеха.</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -786,7 +1083,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 8" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/sanatoriy-dyuny.jpg" alt="Санаторий Дюны">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Санаторий Дюны</div>
+                        <div class="work_item_title">Санаторий</div>
                         <div class="work_item_descr">Разработка проектной документации вентиляции бассейна. Монтаж системы приточно-вытяжной вентиляции в помещении водолечебницы. Обслуживание систем вентиляции санатория. Монтаж и обслуживание системы кондиционирования.</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -794,7 +1091,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 9" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/elizavetinskaya-bolnitsa.jpg" alt="Елизаветинская больница">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Елизаветинская больница</div>
+                        <div class="work_item_title">Больница</div>
                         <div class="work_item_descr">Монтаж системы кондиционирования и вентиляции на этапе реконструкции больницы.</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -802,7 +1099,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 10" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/pushkinec.png" alt="Районный подростковый клуб Пушкинец">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Районный подростковый клуб "Пушкинец"</div>
+                        <div class="work_item_title">Подростковый клуб</div>
                         <div class="work_item_descr">Монтаж системы вентиляции и кондиционирования в клубах РПЦ Пушкинец, Юнность (Systemair Topvex FR04), в помещениях спортивного и тренажерного залов.</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -810,7 +1107,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 11" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/AFIYET.png" alt="Ресторан турецкой кухни AFIYET">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Ресторан турецкой кухни "AFIYET"</div>
+                        <div class="work_item_title">Ресторан турецкой кухни</div>
                         <div class="work_item_descr">Монтаж в стесненных условиях приточно вытяжной установки с рекуперацией тепла Systemair.</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -818,7 +1115,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 12" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/souz.png" alt="Дом детского творчества СОЮЗ">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Дом детского творчества "СОЮЗ"</div>
+                        <div class="work_item_title">Дом детского творчества</div>
                         <div class="work_item_descr">Монтаж системы вентиляции Aereco. Монтаж и обслуживание системы кондиционирования в учреждении.</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -826,7 +1123,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 13" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/sanatorium-white-nights2.png" alt="Техническая зона санатория Белые Ночи">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Техническая зона санатория "Белые Ночи". Обособленное подразделение СОГАЗ</div>
+                        <div class="work_item_title">Техническая зона санатория</div>
                         <div class="work_item_descr">Разработка проектов и монтаж системы вентиляции прачечной, системы теплового обогрева ремонтной зоны и гаража.</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -834,8 +1131,136 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <a href="primery-rabot/index.html#Работа 14" class="work_item">
                     <img src="wp-content/themes/hvac/img/examples/boiler-600m2.png" alt="Котельная дома 600м2">
                     <div class="work_item_overlay">
-                        <div class="work_item_title">Котельная дома 600м²</div>
+                        <div class="work_item_title">Котельная дома</div>
                         <div class="work_item_descr">Котельная дома на конденсатных котла Vaillant</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 15" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/living_house.png" alt="Жилой дом">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Жилой дом</div>
+                        <div class="work_item_descr">Система кондиционирования воздуха. Система приточной вентиляции с подогревом. Коллектора отопления, теплых полов и системы водоснабжения.</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 16" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/prito4naya_vent.png" alt="Приточная вентиляция">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Приточная вентиляция</div>
+                        <div class="work_item_descr">Приточная вентиляция в систему совмещенная с внутрипольными конвекторами отопления</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 17" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/kotelnaya_150m2.png" alt="Газовая котельная банного комплекса">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Газовая котельная банного комплекса</div>
+                        <div class="work_item_descr">Газовая котельная банного комплекса на конденсатных котлах Vaillant</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 18" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/auto_hamam.png" alt="Система автоматизации хамам">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Система автоматизации хамам</div>
+                        <div class="work_item_descr">Система автоматизации подогрева хамам с удаленной диспетчеризацией Danfoss</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 19" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/teplovoy_nasos.png" alt="Тепловой насос Воздух-Вода">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Тепловой насос Воздух-Вода</div>
+                        <div class="work_item_descr">Тепловой насос Воздух-Вода</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 20" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/teplovoy_nasos_2.png" alt="Тепловой насос Воздух-Вода с радиаторным отоплением">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Тепловой насос Воздух-Вода с радиаторным отоплением</div>
+                        <div class="work_item_descr">Тепловой насос Воздух-Вода на систему радиаторного отопления и система кондиционирования помещений</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 21" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/holodilnaya_kamera.png" alt="Наружный блок холодильной камеры">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Наружный блок холодильной камеры</div>
+                        <div class="work_item_descr">Наружный блок холодильной камеры частного жилого дома</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 22" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/teplovoy_nasos_3.png" alt="Гидромодуль теплового насоса">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Гидромодуль теплового насоса</div>
+                        <div class="work_item_descr">Гидромодуль теплового насоса Воздух-Вода</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 23" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/teplovoy_nasos_4.png" alt="Гидромодуль теплового насоса с выносным пультом">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Гидромодуль теплового насоса с выносным пультом</div>
+                        <div class="work_item_descr">Гидромодуль теплового насоса Воздух-Вода с выносным пультом управления</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 24" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/dispet4erizasiya.png" alt="Система диспетчеризации">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Система диспетчеризации</div>
+                        <div class="work_item_descr">Диспетчеризация системы вентиляция, котельной и системы отопления по помещениям с удаленным доступом</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 25" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/sistem_vent.png" alt="Контроллер системы вентиляции бассейна">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Контроллер системы вентиляции бассейна</div>
+                        <div class="work_item_descr">Контроллер системы вентиляции бассейна</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 26" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/udalenniy_dostup.png" alt="Удаленный доступ к инженерным системам">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Удаленный доступ к инженерным системам</div>
+                        <div class="work_item_descr">Удаленный доступ к инженерным системам. Настройка удалённого доступа и регулирования системы отопления по помещениям</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 27" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/all_pool.png" alt="Общественный бассейн">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Общественный бассейн</div>
+                        <div class="work_item_descr">Система вентиляции, осушения, подогрева теплого пола и отопления встроенными в пол и плинтусными конвекторами</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 28" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/aerotruba.png" alt="Аэротруба">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Аэротруба</div>
+                        <div class="work_item_descr">Система технологических воздуховодов. Система отопления, вентиляции и кондиционирования</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 29" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/vent_pool.png" alt="Система вентиляции бассейна Dospel">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Система вентиляции бассейна Dospel</div>
+                        <div class="work_item_descr">Система вентиляции бассейна Dospel</div>
+                        <div class="work_item_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </a>
+                <a href="primery-rabot/index.html#Работа 30" class="work_item">
+                    <img src="wp-content/themes/hvac/img/examples/montaz_air.png" alt="Монтаж кондиционера">
+                    <div class="work_item_overlay">
+                        <div class="work_item_title">Монтаж кондиционера</div>
+                        <div class="work_item_descr">Монтаж кондиционера</div>
                         <div class="work_item_copyright">© Mundo Climatico S.L.</div>
                     </div>
                 </a>
@@ -1009,7 +1434,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
             </div>
         </div>
     </div>
-
 </div>
 
 
@@ -2200,4 +2624,114 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+        
+        // Функция для копирования email
+        function copyEmail(event) {
+            event.preventDefault();
+            const email = 'info@climaprof.es';
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(email).then(function() {
+                    // Показываем уведомление об успешном копировании
+                    showNotification('Email скопирован в буфер обмена!');
+                }).catch(function(err) {
+                    console.error('Ошибка копирования: ', err);
+                    fallbackCopyTextToClipboard(email);
+                });
+            } else {
+                fallbackCopyTextToClipboard(email);
+            }
+        }
+
+        // Fallback для старых браузеров
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showNotification('Email скопирован в буфер обмена!');
+                }
+            } catch (err) {
+                console.error('Ошибка копирования: ', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Функция для показа уведомления
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #47C5AD;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 8px;
+                z-index: 10000;
+                font-size: 14px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                animation: slideIn 0.3s ease;
+            `;
+            notification.textContent = message;
+            
+            // Добавляем CSS анимацию
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(notification);
+            
+            // Удаляем уведомление через 3 секунды
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Функция для отправки контактной формы
+        function sendContactForm(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Получаем данные из формы
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const message = formData.get('message');
+            
+            // Формируем email с помощью mailto
+            const subject = 'Новое сообщение с сайта MUNDO IGOR';
+            const body = `Имя: ${name}\nEmail: ${email}\nТелефон: ${phone || 'Не указан'}\n\nСообщение:\n${message}`;
+            
+            // Создаем ссылку mailto
+            const mailtoLink = `mailto:info@climaprof.es?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Открываем почтовый клиент
+            window.open(mailtoLink);
+            
+            // Показываем уведомление
+            showNotification('Сообщение отправлено! Проверьте ваш почтовый клиент.');
+            
+            // Очищаем форму
+            form.reset();
+        }
     </script>

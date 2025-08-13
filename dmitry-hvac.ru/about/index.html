@@ -64,6 +64,61 @@
             background: #3db89a;
             transform: translateY(-2px);
         }
+        
+        /* Стили для кнопок футера */
+        .footer_menu_block {
+            display: block;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer_menu_block .header-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer_menu_block .header-menu li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer_menu_block .header-menu a {
+            display: block;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333 !important;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            min-width: 120px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer_menu_block .header-menu a:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Мобильные стили для кнопок футера */
+        @media screen and (max-width: 768px) {
+            .footer_menu_block .header-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>

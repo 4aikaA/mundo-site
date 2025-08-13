@@ -190,24 +190,31 @@ document.addEventListener('DOMContentLoaded', function() {
             container.scrollLeft = scrollLeft - walk;
         });
 
-        // Touch events for mobile
-        container.addEventListener('touchstart', function(e) {
-            isTouching = true;
-            startX = e.touches[0].pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
-        });
+                    // Touch events for mobile
+            container.addEventListener('touchstart', function(e) {
+                isTouching = true;
+                startX = e.touches[0].pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+                stopAutoSlide(); // Останавливаем автолистание при касании
+            });
 
-        container.addEventListener('touchend', function() {
-            isTouching = false;
-        });
+            container.addEventListener('touchend', function() {
+                isTouching = false;
+                // Возобновляем автолистание через 2 секунды после касания
+                setTimeout(function() {
+                    if (!isAutoSlideDisabled) {
+                        startAutoSlide();
+                    }
+                }, 2000);
+            });
 
-        container.addEventListener('touchmove', function(e) {
-            if (!isTouching) return;
-            e.preventDefault();
-            var x = e.touches[0].pageX - container.offsetLeft;
-            var walk = (x - startX) * 2;
-            container.scrollLeft = scrollLeft - walk;
-        });
+            container.addEventListener('touchmove', function(e) {
+                if (!isTouching) return;
+                e.preventDefault();
+                var x = e.touches[0].pageX - container.offsetLeft;
+                var walk = (x - startX) * 2;
+                container.scrollLeft = scrollLeft - walk;
+            });
 
         container.style.cursor = 'grab';
         container.style.userSelect = 'none';
@@ -855,16 +862,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Анимация кругов при движении мыши (если элементы существуют)
+// Временно отключено, так как элементы .circle1, .circle2, .circle3 отсутствуют в HTML
+/*
 document.addEventListener("mousemove", function(e) {
+    // Проверяем существование элементов перед анимацией
+    var circle1 = document.querySelector(".circle1");
+    var circle2 = document.querySelector(".circle2");
+    var circle3 = document.querySelector(".circle3");
+    
+    // Если элементов нет, не выполняем анимацию
+    if (!circle1 && !circle2 && !circle3) {
+        return;
+    }
+    
     var mouseX = e.clientX;
     var mouseY = e.clientY;
 
     if (typeof gsap !== 'undefined') {
-        // Проверяем существование элементов перед анимацией
-        var circle1 = document.querySelector(".circle1");
-        var circle2 = document.querySelector(".circle2");
-        var circle3 = document.querySelector(".circle3");
-        
         if (circle1) {
             gsap.to(".circle1", {
                 duration: 0.5,
@@ -888,6 +902,7 @@ document.addEventListener("mousemove", function(e) {
         }
     }
 });
+*/
 
 // Обработка текстовых узлов для неразрывных пробелов
 document.addEventListener("DOMContentLoaded", function() {

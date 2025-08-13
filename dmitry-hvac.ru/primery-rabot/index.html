@@ -269,7 +269,7 @@
         color: #333;
         cursor: pointer;
         transition: all 0.3s ease;
-        z-index: 10003;
+        z-index: 10004;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -283,11 +283,11 @@
     }
     
     .image-modal-prev {
-        left: 20px;
+        left: -100px;
     }
     
     .image-modal-next {
-        right: 20px;
+        right: -100px;
     }
     
     /* Счетчик изображений */
@@ -348,18 +348,77 @@
         }
         
         .image-modal-prev {
-            left: 10px;
+            left: -80px;
         }
         
         .image-modal-next {
-            right: 10px;
+            right: -80px;
         }
     }
     
-    /* Скрываем кнопки на очень маленьких экранах */
+    /* Позиционируем кнопки за пределами модального окна на очень маленьких экранах */
     @media screen and (max-width: 480px) {
-        .image-modal-nav {
-            display: none !important;
+        .image-modal-prev {
+            left: -60px;
+        }
+        
+        .image-modal-next {
+            right: -60px;
+        }
+    }
+    
+    /* Стили для кнопок футера */
+    .footer_menu_block {
+        display: block;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .footer_menu_block .header-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+    }
+    
+    .footer_menu_block .header-menu li {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .footer_menu_block .header-menu a {
+        display: block;
+        padding: 12px 24px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #333 !important;
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        min-width: 120px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .footer_menu_block .header-menu a:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Мобильные стили для кнопок футера */
+    @media screen and (max-width: 768px) {
+        .footer_menu_block .header-menu {
+            flex-direction: column;
+            gap: 10px;
         }
     }
     </style>
@@ -611,7 +670,7 @@
                 <div class="project_item" id="Работа 1">
                     <img src="../wp-content/themes/hvac/img/examples/mercedez-benz.png" alt="Сервисный центр Mercedez-Benz">
                     <div class="project_overlay">
-                        <div class="project_title">Сервисный центр "Mercedez-Benz"</div>
+                        <div class="project_title">Сервисный центр</div>
                         <div class="project_descr">Монтаж системы кондиционирования в сервисном центре по ремонту грузовых автомобилей "Mercedez-Benz"</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -620,7 +679,7 @@
                 <div class="project_item" id="Работа 2">
                     <img src="../wp-content/themes/hvac/img/examples/cinema-kurortny.jpg" alt="Кинотеатр Курортный">
                     <div class="project_overlay">
-                        <div class="project_title">Кинотеатр "Курортный"</div>
+                        <div class="project_title">Кинотеатр</div>
                         <div class="project_descr">Монтаж и сервисное обслуживание системы вентиляции с рекуперацией тепла, систем кондиционирования большого и малого залов кинотеатра</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -629,7 +688,7 @@
                 <div class="project_item" id="Работа 3">
                     <img src="../wp-content/themes/hvac/img/examples/sanatorium-white-nights.png" alt="Санаторий Белые Ночи">
                     <div class="project_overlay">
-                        <div class="project_title">Санаторий "Белые Ночи". Обособленное подразделение СОГАЗ</div>
+                        <div class="project_title">Санаторий</div>
                         <div class="project_descr">Монтаж и обслуживание систем вентиляции бассейна, главного корпуса, системы кондиционирования санатория. Проектирование и монтаж системы дымоудаления и подпора воздуха в лифтовые тамбуры</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -638,7 +697,7 @@
                 <div class="project_item" id="Работа 4">
                     <img src="../wp-content/themes/hvac/img/examples/nhv-rus.png" alt="Завод НВХ РУС">
                     <div class="project_overlay">
-                        <div class="project_title">Завод НВХ РУС. Поставщик завода Hyundai</div>
+                        <div class="project_title">Завод</div>
                         <div class="project_descr">Разработка проекта и автоматизация системы вентиляции по тех.заданию Заказчика</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -647,7 +706,7 @@
                 <div class="project_item" id="Работа 5">
                     <img src="../wp-content/themes/hvac/img/examples/boiler-1000m2.png" alt="Котельная жилого дома 1000м2">
                     <div class="project_overlay">
-                        <div class="project_title">Котельная жилого дома 1000м²</div>
+                        <div class="project_title">Котельная жилого дома</div>
                         <div class="project_descr">Монтаж и обслуживание систем отопления и вентиляции жилого комплекса</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -656,7 +715,7 @@
                 <div class="project_item" id="Работа 6">
                     <img src="../wp-content/themes/hvac/img/examples/fresh-fitnes.jpg" alt="Фитнес клуб Фреш фитнес">
                     <div class="project_overlay">
-                        <div class="project_title">Фитнес клуб "Фреш фитнес"</div>
+                        <div class="project_title">Фитнес клуб</div>
                         <div class="project_descr">Комплекс работ по проектированию строительству и реконструкции инженерных систем здания</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -665,7 +724,7 @@
                 <div class="project_item" id="Работа 7">
                     <img src="../wp-content/themes/hvac/img/examples/WILLIAM-BASS PUB.jpg" alt="Ресторан WILLIAM BASS PUB">
                     <div class="project_overlay">
-                        <div class="project_title">Ресторан "WILLIAM BASS PUB" г. Санкт-Петербург</div>
+                        <div class="project_title">Ресторан</div>
                         <div class="project_descr">Монтаж и обслуживание системы приточно-вытяжной вентиляции c центральнеым охлаждением 54 кВт на базе оборудования Wesper. Монтаж системы локальной вытяжной вентиляции зоны горячего цеха.</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -674,7 +733,7 @@
                 <div class="project_item" id="Работа 8">
                     <img src="../wp-content/themes/hvac/img/examples/sanatoriy-dyuny.jpg" alt="Санаторий Дюны">
                     <div class="project_overlay">
-                        <div class="project_title">Санаторий Дюны</div>
+                        <div class="project_title">Санаторий</div>
                         <div class="project_descr">Разработка проектной документации вентиляции бассейна. Монтаж системы приточно-вытяжной вентиляции в помещении водолечебницы. Обслуживание систем вентиляции санатория. Монтаж и обслуживание системы кондиционирования.</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -683,7 +742,7 @@
                 <div class="project_item" id="Работа 9">
                     <img src="../wp-content/themes/hvac/img/examples/elizavetinskaya-bolnitsa.jpg" alt="Елизаветинская больница">
                     <div class="project_overlay">
-                        <div class="project_title">Елизаветинская больница</div>
+                        <div class="project_title">Больница</div>
                         <div class="project_descr">Монтаж системы кондиционирования и вентиляции на этапе реконструкции больницы.</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -692,7 +751,7 @@
                 <div class="project_item" id="Работа 10">
                     <img src="../wp-content/themes/hvac/img/examples/pushkinec.png" alt="Районный подростковый клуб Пушкинец">
                     <div class="project_overlay">
-                        <div class="project_title">Районный подростковый клуб "Пушкинец"</div>
+                        <div class="project_title">Подростковый клуб</div>
                         <div class="project_descr">Монтаж системы вентиляции и кондиционирования в клубах РПЦ Пушкинец, Юнность (Systemair Topvex FR04), в помещениях спортивного и тренажерного залов.</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -701,7 +760,7 @@
                 <div class="project_item" id="Работа 11">
                     <img src="../wp-content/themes/hvac/img/examples/AFIYET.png" alt="Ресторан турецкой кухни AFIYET">
                     <div class="project_overlay">
-                        <div class="project_title">Ресторан турецкой кухни "AFIYET"</div>
+                        <div class="project_title">Ресторан турецкой кухни</div>
                         <div class="project_descr">Монтаж в стесненных условиях приточно вытяжной установки с рекуперацией тепла Systemair.</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -710,7 +769,7 @@
                 <div class="project_item" id="Работа 12">
                     <img src="../wp-content/themes/hvac/img/examples/souz.png" alt="Дом детского творчества СОЮЗ">
                     <div class="project_overlay">
-                        <div class="project_title">Дом детского творчества "СОЮЗ"</div>
+                        <div class="project_title">Дом детского творчества</div>
                         <div class="project_descr">Монтаж системы вентиляции Aereco. Монтаж и обслуживание системы кондиционирования в учреждении.</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -719,7 +778,7 @@
                 <div class="project_item" id="Работа 13">
                     <img src="../wp-content/themes/hvac/img/examples/sanatorium-white-nights2.png" alt="Техническая зона санатория Белые Ночи">
                     <div class="project_overlay">
-                        <div class="project_title">Техническая зона санатория "Белые Ночи". Обособленное подразделение СОГАЗ</div>
+                        <div class="project_title">Техническая зона санатория</div>
                         <div class="project_descr">Разработка проектов и монтаж системы вентиляции прачечной, системы теплового обогрева ремонтной зоны и гаража.</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
@@ -728,8 +787,152 @@
                 <div class="project_item" id="Работа 14">
                     <img src="../wp-content/themes/hvac/img/examples/boiler-600m2.png" alt="Котельная дома 600м2">
                     <div class="project_overlay">
-                        <div class="project_title">Котельная дома 600м²</div>
+                        <div class="project_title">Котельная дома</div>
                         <div class="project_descr">Котельная дома на конденсатных котла Vaillant</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 15">
+                    <img src="../wp-content/themes/hvac/img/examples/living_house.png" alt="Жилой дом">
+                    <div class="project_overlay">
+                        <div class="project_title">Жилой дом</div>
+                        <div class="project_descr">Система кондиционирования воздуха. Система приточной вентиляции с подогревом. Коллектора отопления, теплых полов и системы водоснабжения.</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 16">
+                    <img src="../wp-content/themes/hvac/img/examples/prito4naya_vent.png" alt="Приточная вентиляция">
+                    <div class="project_overlay">
+                        <div class="project_title">Приточная вентиляция</div>
+                        <div class="project_descr">Приточная вентиляция в систему совмещенная с внутрипольными конвекторами отопления</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 17">
+                    <img src="../wp-content/themes/hvac/img/examples/kotelnaya_150m2.png" alt="Газовая котельная банного комплекса">
+                    <div class="project_overlay">
+                        <div class="project_title">Газовая котельная банного комплекса</div>
+                        <div class="project_descr">Газовая котельная банного комплекса на конденсатных котлах Vaillant</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 18">
+                    <img src="../wp-content/themes/hvac/img/examples/auto_hamam.png" alt="Система автоматизации хамам">
+                    <div class="project_overlay">
+                        <div class="project_title">Система автоматизации хамам</div>
+                        <div class="project_descr">Система автоматизации подогрева хамам с удаленной диспетчеризацией Danfoss</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 19">
+                    <img src="../wp-content/themes/hvac/img/examples/teplovoy_nasos.png" alt="Тепловой насос Воздух-Вода">
+                    <div class="project_overlay">
+                        <div class="project_title">Тепловой насос Воздух-Вода</div>
+                        <div class="project_descr">Тепловой насос Воздух-Вода</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 20">
+                    <img src="../wp-content/themes/hvac/img/examples/teplovoy_nasos_2.png" alt="Тепловой насос Воздух-Вода с радиаторным отоплением">
+                    <div class="project_overlay">
+                        <div class="project_title">Тепловой насос Воздух-Вода с радиаторным отоплением</div>
+                        <div class="project_descr">Тепловой насос Воздух-Вода на систему радиаторного отопления и система кондиционирования помещений</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 21">
+                    <img src="../wp-content/themes/hvac/img/examples/holodilnaya_kamera.png" alt="Наружный блок холодильной камеры">
+                    <div class="project_overlay">
+                        <div class="project_title">Наружный блок холодильной камеры</div>
+                        <div class="project_descr">Наружный блок холодильной камеры частного жилого дома</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 22">
+                    <img src="../wp-content/themes/hvac/img/examples/teplovoy_nasos_3.png" alt="Гидромодуль теплового насоса">
+                    <div class="project_overlay">
+                        <div class="project_title">Гидромодуль теплового насоса</div>
+                        <div class="project_descr">Гидромодуль теплового насоса Воздух-Вода</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 23">
+                    <img src="../wp-content/themes/hvac/img/examples/teplovoy_nasos_4.png" alt="Гидромодуль теплового насоса с выносным пультом">
+                    <div class="project_overlay">
+                        <div class="project_title">Гидромодуль теплового насоса с выносным пультом</div>
+                        <div class="project_descr">Гидромодуль теплового насоса Воздух-Вода с выносным пультом управления</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 24">
+                    <img src="../wp-content/themes/hvac/img/examples/dispet4erizasiya.png" alt="Система диспетчеризации">
+                    <div class="project_overlay">
+                        <div class="project_title">Система диспетчеризации</div>
+                        <div class="project_descr">Диспетчеризация системы вентиляция, котельной и системы отопления по помещениям с удаленным доступом</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 25">
+                    <img src="../wp-content/themes/hvac/img/examples/sistem_vent.png" alt="Контроллер системы вентиляции бассейна">
+                    <div class="project_overlay">
+                        <div class="project_title">Контроллер системы вентиляции бассейна</div>
+                        <div class="project_descr">Контроллер системы вентиляции бассейна</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 26">
+                    <img src="../wp-content/themes/hvac/img/examples/udalenniy_dostup.png" alt="Удаленный доступ к инженерным системам">
+                    <div class="project_overlay">
+                        <div class="project_title">Удаленный доступ к инженерным системам</div>
+                        <div class="project_descr">Удаленный доступ к инженерным системам. Настройка удалённого доступа и регулирования системы отопления по помещениям</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 27">
+                    <img src="../wp-content/themes/hvac/img/examples/all_pool.png" alt="Общественный бассейн">
+                    <div class="project_overlay">
+                        <div class="project_title">Общественный бассейн</div>
+                        <div class="project_descr">Система вентиляции, осушения, подогрева теплого пола и отопления встроенными в пол и плинтусными конвекторами</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 28">
+                    <img src="../wp-content/themes/hvac/img/examples/aerotruba.png" alt="Аэротруба">
+                    <div class="project_overlay">
+                        <div class="project_title">Аэротруба</div>
+                        <div class="project_descr">Система технологических воздуховодов. Система отопления, вентиляции и кондиционирования</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 29">
+                    <img src="../wp-content/themes/hvac/img/examples/vent_pool.png" alt="Система вентиляции бассейна Dospel">
+                    <div class="project_overlay">
+                        <div class="project_title">Система вентиляции бассейна Dospel</div>
+                        <div class="project_descr">Система вентиляции бассейна Dospel</div>
+                        <div class="project_copyright">© Mundo Climatico S.L.</div>
+                    </div>
+                </div>
+
+                <div class="project_item" id="Работа 30">
+                    <img src="../wp-content/themes/hvac/img/examples/montaz_air.png" alt="Монтаж кондиционера">
+                    <div class="project_overlay">
+                        <div class="project_title">Монтаж кондиционера</div>
+                        <div class="project_descr">Монтаж кондиционера</div>
                         <div class="project_copyright">© Mundo Climatico S.L.</div>
                     </div>
                 </div>
@@ -752,7 +955,7 @@
                 <p id="modalDescription"></p>
                 <p id="modalCopyright"></p>
                 <div class="image-modal-counter">
-                    <span id="currentImage">1</span> / <span id="totalImages">14</span>
+                    <span id="currentImage">1</span> / <span id="totalImages">30</span>
                 </div>
             </div>
         </div>
@@ -1059,6 +1262,125 @@
                 });
             }
         });
+        
+        // Модальное окно для примеров работ
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectItems = document.querySelectorAll('.project_item');
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalCopyright = document.getElementById('modalCopyright');
+            const modalClose = document.querySelector('.image-modal-close');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const currentImageSpan = document.getElementById('currentImage');
+            const totalImagesSpan = document.getElementById('totalImages');
+            
+            let currentImageIndex = 0;
+            const projectData = [];
+            
+            // Собираем данные о проектах
+            projectItems.forEach((item, index) => {
+                const title = item.querySelector('.project_title').textContent;
+                const description = item.querySelector('.project_descr').textContent;
+                const copyright = item.querySelector('.project_copyright').textContent;
+                const imgSrc = item.querySelector('img').src;
+                
+                projectData.push({
+                    title: title,
+                    description: description,
+                    copyright: copyright,
+                    imgSrc: imgSrc
+                });
+                
+                // Добавляем обработчик клика
+                item.addEventListener('click', function() {
+                    openImageModal(index);
+                });
+            });
+            
+            // Обновляем счетчик
+            totalImagesSpan.textContent = projectData.length;
+            
+            function openImageModal(index) {
+                currentImageIndex = index;
+                updateModalContent();
+                imageModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeImageModal() {
+                imageModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+            
+            function updateModalContent() {
+                const currentProject = projectData[currentImageIndex];
+                modalImage.src = currentProject.imgSrc;
+                modalTitle.textContent = currentProject.title;
+                modalDescription.textContent = currentProject.description;
+                modalCopyright.textContent = currentProject.copyright;
+                currentImageSpan.textContent = currentImageIndex + 1;
+            }
+            
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % projectData.length;
+                updateModalContent();
+            }
+            
+            function showPrevImage() {
+                currentImageIndex = (currentImageIndex - 1 + projectData.length) % projectData.length;
+                updateModalContent();
+            }
+            
+            // Обработчики событий
+            modalClose.addEventListener('click', closeImageModal);
+            prevBtn.addEventListener('click', showPrevImage);
+            nextBtn.addEventListener('click', showNextImage);
+            
+            // Закрытие по клику вне модального окна
+            imageModal.addEventListener('click', function(e) {
+                if (e.target === imageModal) {
+                    closeImageModal();
+                }
+            });
+            
+            // Закрытие по Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && imageModal.style.display === 'block') {
+                    closeImageModal();
+                }
+            });
+            
+            // Поддержка свайпов для мобильных устройств
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            imageModal.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            imageModal.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // Свайп влево - следующее изображение
+                        showNextImage();
+                    } else {
+                        // Свайп вправо - предыдущее изображение
+                        showPrevImage();
+                    }
+                }
+            }
+        });
     </script>
     
     <style>
@@ -1187,6 +1509,136 @@
         .pop_up_form_btn .phone:hover {
             background: #3db89a;
             transform: translateY(-2px);
+        }
+        
+        /* Стили для модального окна примеров */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .image-modal-content {
+            position: relative;
+            margin: 5% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .image-modal-close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #f1f1f1;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+        }
+        
+        .image-modal-close:hover {
+            color: #bbb;
+        }
+        
+        .image-modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10001;
+            transition: all 0.3s ease;
+        }
+        
+        .image-modal-prev {
+            left: 20px;
+        }
+        
+        .image-modal-next {
+            right: 20px;
+        }
+        
+        .image-modal-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        #modalImage {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .image-modal-info {
+            margin-top: 20px;
+            color: white;
+        }
+        
+        .image-modal-info h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .image-modal-info p {
+            margin-bottom: 8px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .image-modal-counter {
+            margin-top: 15px;
+            font-size: 18px;
+            opacity: 0.8;
+        }
+        
+        /* Мобильные стили */
+        @media (max-width: 768px) {
+            .image-modal-content {
+                margin: 10% auto;
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .image-modal-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .image-modal-prev {
+                left: 10px;
+            }
+            
+            .image-modal-next {
+                right: 10px;
+            }
+            
+            #modalImage {
+                max-height: 60vh;
+            }
+            
+            .image-modal-info h3 {
+                font-size: 20px;
+            }
+            
+            .image-modal-info p {
+                font-size: 14px;
+            }
         }
     </style>
 
