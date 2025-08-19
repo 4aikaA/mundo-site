@@ -324,6 +324,62 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
             background: #3db89a;
             transform: translateY(-2px);
         }
+        
+        /* Унификация размеров контактных плашек */
+        .footer_info_item {
+            padding: 24px !important;
+            border-radius: 16px !important;
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px) !important;
+            box-shadow: 0 4px 20px rgba(12, 60, 140, 0.1) !important;
+            transition: all 0.3s ease !important;
+            max-width: 400px !important;
+        }
+        
+        .footer_info_item:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 30px rgba(12, 60, 140, 0.15) !important;
+        }
+        
+        .footer_info_item_info {
+            gap: 12px !important;
+        }
+        
+        .footer_info_item_info_name {
+            font-size: 16px !important;
+            font-weight: 600 !important;
+        }
+        
+        .footer_info_item_info_contact {
+            font-size: 14px !important;
+        }
+        
+        /* Обеспечиваем одинаковые отступы для footer_info */
+        .footer_info {
+            gap: 40px !important;
+            margin-top: 60px !important;
+        }
+        
+        .footer_info_left,
+        .footer_info_right {
+            gap: 30px !important;
+        }
+        
+        .footer_info_left {
+            padding-right: 60px !important;
+        }
+        
+        .footer_info_right {
+            padding-left: 60px !important;
+        }
+        
+        @media screen and (max-width: 900px) {
+            .footer_info_left,
+            .footer_info_right {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
     </style>
 
     <!-- Yandex.Metrika counter -->
@@ -396,7 +452,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 </div>
 
                                 <div class="pop_up_form_btn">
-                    <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="wap">
+                    <a href="https://api.whatsapp.com/send/?phone=79216433297&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="wap">
                         <img src="wp-content/themes/hvac/img/whatsapp.svg" alt="">
                         <span>Написать WhatsApp</span>
                     </a>
@@ -404,27 +460,17 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                         <img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="">
                         <span>Telegram Igor</span>
                     </a>
-                    <a href="https://t.me/Dima_Gudmaer" target="_blank" rel="noopener noreferrer" class="tgm">
-                        <img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="">
-                        <span>Telegram Dima</span>
-                    </a>
-                    <a href="tel:+34613705466" class="phone">
+                    <a href="tel:+79216433297" class="phone">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
                             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                         </svg>
-                        <span>+34 613 70 54 66</span>
+                        <span>+7 921 643-32-97</span>
                     </a>
-                    <a href="tel:+34681990388" class="phone">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
-                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                        </svg>
-                        <span>+34 681 99 03 88</span>
-                    </a>
-                    <a href="#" onclick="copyEmail('info@climaprof.es'); return false;" class="email">
+                    <a href="#" onclick="copyEmail('igor.kuznetsov@gmail.com'); return false;" class="email">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
                             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                         </svg>
-                        <span>info@climaprof.es</span>
+                        <span>igor.kuznetsov@gmail.com</span>
                     </a>
                 </div>
 
@@ -441,7 +487,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                     <div class="menu">
                         <nav class="header-menu-container"><ul id="menu-header_menu" class="header-menu"><li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-57"><a href="#services-anchor">Выбрать услугу</a></li>
 <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="konsultatsiya/index.html">Консультация</a></li>
-<li id="menu-item-901" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-901"><a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer">Mundo Climatico</a></li>
+<li id="menu-item-901" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-901"><a href="sotrudnichestvo/index.html">Присоединяйтесь</a></li>
 <li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="primery-rabot/index.html">Примеры работ</a></li>
 <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="about/index.html">О себе</a></li>
 <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="#contact-info">Контакты</a></li>
@@ -458,7 +504,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
             <div class="container">
                 <div class="menu_block">
                     <a href="index.html" class="custom-logo-badge">
-                        <span class="custom-logo-text">MUNDO IGOR</span>
+                        <span class="custom-logo-text">Игорь Кузнецов</span>
                     </a>
                     <div class="menu">
                         <nav class="header-menu-container"><ul id="menu-header_menu-1" class="header-menu">                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-57 dropdown">
@@ -474,7 +520,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                             </ul>
                         </li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="konsultatsiya/index.html">Консультация</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-901"><a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer">Mundo Climatico</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-901"><a href="sotrudnichestvo/index.html">Присоединяйтесь</a></li>
 
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="primery-rabot/index.html">Примеры работ</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="about/index.html">О себе</a></li>
@@ -709,7 +755,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
         
 
 
-                                                <img src="wp-content/themes/hvac/img/FotoBanner.png" class="heroimg heroimg_desk"
+                                                <img src="wp-content/themes/hvac/img/main_без_фона.png" class="heroimg heroimg_desk"
                             alt="">
 
 
@@ -717,7 +763,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
             <div class="hero_content_top">
                 <div class="hero_content_top_left">
                     <h1 class="title"><span>Автоматизация, монтаж и обслуживание инженерных систем</span></h1>
-                    <div class="hero_descr">Создаем комфортный климат для вас</div>
+                    <div class="hero_descr">Базируемся в Санкт-Петербурге, работаем <strong>по всей России</strong>, <strong>а также Европе</strong></div>
                 </div>
 
 
@@ -730,9 +776,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 
 
                 <div class="hero_soc">
-                    <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=79216433297&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
                     <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Igor"></a>
-                    <a href="https://t.me/Dima_Gudmaer" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Dima"></a>
                 </div>
             </div>
         </div>
@@ -752,7 +797,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
             <div class="hero_content_top">
                 <div class="hero_content_top_left">
                     <h1 class="title"><span>Автоматизация, монтаж и обслуживание инженерных систем</span></h1>
-                    <div class="hero_descr">Создаем комфортный климат для вас</div>
+                    <div class="hero_descr">Базируемся в Санкт-Петербурге, работаем <strong>по всей России</strong>, <strong>а также Европе</strong></div>
                 </div>
 
 
@@ -779,9 +824,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
             alt="">
 
         <div class="hero_soc">
-            <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
+            <a href="https://api.whatsapp.com/send/?phone=79216433297&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
             <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Igor"></a>
-            <a href="https://t.me/Dima_Gudmaer" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Dima"></a>
         </div>
             </div>
 
@@ -1324,8 +1368,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                     <div class="footer_info_item_info">
                         <div class="footer_info_item_info_name"><span>Телефон</span></div>
                         <div class="footer_info_item_info_contact phone-numbers">
-                            <a href="tel:+34613705466" class="phone-link">+34 613 70 54 66</a>
-                            <a href="tel:+34681990388" class="phone-link">+34 681 99 03 88</a>
+                            <a href="tel:+79216433297" class="phone-link">+7 921 643-32-97</a>
                         </div>
                     </div>
                 </div>
@@ -1334,7 +1377,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                     <div class="footer_info_item_info">
                         <div class="footer_info_item_info_name"><span>Email</span></div>
                         <div class="footer_info_item_info_contact">
-                            <a href="mailto:info@climaprof.es" onclick="copyEmail(event)">info@climaprof.es</a>
+                            <a href="mailto:igor.kuznetsov@gmail.com" onclick="copyEmail(event)">igor.kuznetsov@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -1358,7 +1401,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Телефон</label>
-                                <input type="tel" class="form-input" name="phone" placeholder="+34 XXX XXX XXX">
+                                <input type="tel" class="form-input" name="phone" placeholder="+7 XXX XXX-XX-XX">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Сообщение</label>
@@ -1379,9 +1422,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                         <div class="footer_info_item_info_name"><span>Социальные</span> сети</div>
                         <div class="footer_info_item_info_contact">
                             <div class="footer_soc">
-                                <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
+                                <a href="https://api.whatsapp.com/send/?phone=79216433297&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
                                 <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Igor"></a>
-                                <a href="https://t.me/Dima_Gudmaer" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Dima"></a>
                             </div>
                         </div>
                     </div>
@@ -1391,9 +1433,15 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                     <div class="footer_info_item_info">
                         <div class="footer_info_item_info_name"><span>Адрес</span></div>
                         <div class="footer_info_item_info_contact">
-                            <a href="https://maps.google.com/?q=Calle+Islas+Baleares,+12B,+Pt.36,+Cjito+PAZ+II,+03170,+Ciudad+Quesada+(Rojales),+Provincia+Alicante,+Spain" target="_blank" rel="noopener noreferrer" class="address-link">
-                            Сalle Islas Baleares, 12B, Pt.36, Cjito PAZ II, 03170, Ciudad Quesada (Rojales), Provincia Alicante
-                            </a>
+                            <div class="address-text">188660, Ленинградская обл., дер. Порошкино, ул.Березовая, уч.8</div>
+                            <div class="map-links" style="margin-top: 8px; display: flex; gap: 10px; flex-wrap: wrap;">
+                                <a href="https://yandex.ru/maps/?text=188660%2C%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%2E%2C%20%D0%B4%D0%B5%D1%80%2E%20%D0%9F%D0%BE%D1%80%D0%BE%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%2C%20%D1%83%D0%BB%2E%D0%91%D0%B5%D1%80%D0%B5%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%2C%20%D1%83%D1%87%2E8" target="_blank" rel="noopener noreferrer" class="map-link yandex-link">
+                                    <span>Яндекс Карты</span>
+                                </a>
+                                <a href="https://2gis.ru/search/188660%2C%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%2E%2C%20%D0%B4%D0%B5%D1%80%2E%20%D0%9F%D0%BE%D1%80%D0%BE%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%2C%20%D1%83%D0%BB%2E%D0%91%D0%B5%D1%80%D0%B5%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%2C%20%D1%83%D1%87%2E8" target="_blank" rel="noopener noreferrer" class="map-link gis-link">
+                                    <span>2ГИС</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1410,7 +1458,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                     <div class="footer_menu_block">
                         <nav class="header-menu-container"><ul id="menu-header_menu-2" class="header-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-57"><a href="#services-anchor" aria-current="page">Выбрать услугу</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="konsultatsiya/index.html">Консультация</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-901"><a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer">Mundo Climatico</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-901"><a href="sotrudnichestvo/index.html">Присоединяйтесь</a></li>
 
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="primery-rabot/index.html">Примеры работ</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="about/index.html">О себе</a></li>
@@ -1419,13 +1467,12 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 </div>
                 <div class="footer_block_bottom">
                         <div class="footer_soc_bottom">
-                        <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
+                        <a href="https://api.whatsapp.com/send/?phone=79216433297&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
                         <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Igor"></a>
-                        <a href="https://t.me/Dima_Gudmaer" target="_blank" rel="noopener noreferrer"><img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Dima"></a>
                     </div>
 
                     <div class="footer_block_bottom_info">
-                        <div>Copyright © 2018 - 2025 Mundo Climatico S.L.</div>
+                        <div>Copyright © 2009 - 2025</div>
                         <div class="info">
                             Перепечатка, а равно использование материалов с данного сайта, разрешена только с письменного согласия владельца.
                         </div>
@@ -1486,7 +1533,7 @@ var ajaxurl = "index.html\/\/dmitry-hvac.ru\/wp-admin\/admin-ajax.php";
     // Функция для копирования email
     function copyEmail(event) {
         event.preventDefault();
-        const email = 'info@climaprof.es';
+        const email = 'igor.kuznetsov@gmail.com';
         
         if (navigator.clipboard) {
             navigator.clipboard.writeText(email).then(function() {
@@ -2149,7 +2196,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Функция для копирования email
         function copyEmail(event) {
             event.preventDefault();
-            const email = 'info@climaprof.es';
+            const email = 'igor.kuznetsov@gmail.com';
             
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(email).then(function() {
@@ -2244,7 +2291,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const body = `Имя: ${name}\nEmail: ${email}\nТелефон: ${phone || 'Не указан'}\n\nСообщение:\n${message}`;
             
             // Создаем ссылку mailto
-            const mailtoLink = `mailto:info@climaprof.es?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailtoLink = `mailto:igor.kuznetsov@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             
             // Открываем почтовый клиент
             window.open(mailtoLink);
@@ -2288,7 +2335,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 
                 <div class="service-modal-description">
-                    Полный расчет стоимости проектирования наши специалисты делают после получения от заказчика плана помещений и технического задания. Документы можно выслать на электронный адрес: <a href="mailto:info@climaprof.es">info@climaprof.es</a>
+                    Полный расчет стоимости проектирования наши специалисты делают после получения от заказчика плана помещений и технического задания. Документы можно выслать на электронный адрес: <a href="mailto:igor.kuznetsov@gmail.com">igor.kuznetsov@gmail.com</a>
                 </div>
             </div>
             
@@ -2319,7 +2366,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     'кафе и ресторанов',
                     'медицинских центров'
                 ],
-                additionalText: 'Мы выполняем весь цикл работ от проектирования до ввода объекта в эксплуатацию, таким образом, снижая риск Заказчика. В нашей работе мы всегда выдерживаем высокое качество услуг и индивидуальный подход к каждому клиенту.\n\nПолный расчет стоимости проектирования наши специалисты делают после получения от заказчика плана помещений и технического задания. Документы можно выслать на электронный адрес: info@climaprof.es'
+                additionalText: 'Мы выполняем весь цикл работ от проектирования до ввода объекта в эксплуатацию, таким образом, снижая риск Заказчика. В нашей работе мы всегда выдерживаем высокое качество услуг и индивидуальный подход к каждому клиенту.\n\nПолный расчет стоимости проектирования наши специалисты делают после получения от заказчика плана помещений и технического задания. Документы можно выслать на электронный адрес: igor.kuznetsov@gmail.com'
             },
             'service-install': {
                 title: 'Системы кондиционирования',
@@ -2536,7 +2583,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="consultation-form-group">
                         <label class="consultation-form-label">Номер телефона</label>
-                        <input type="tel" class="consultation-form-input" name="phone" placeholder="+34 XXX XXX XXX" required>
+                        <input type="tel" class="consultation-form-input" name="phone" placeholder="+7 XXX XXX-XX-XX" required>
                     </div>
                     
                     <button type="submit" class="consultation-form-submit">Перезвоните мне</button>
@@ -2576,7 +2623,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const body = `Имя: ${name}\nТелефон: ${phone}\n\nЗаявка на бесплатную консультацию с сайта MUNDO IGOR`;
             
             // Создаем ссылку mailto
-            const mailtoLink = `mailto:info@climaprof.es?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailtoLink = `mailto:igor.kuznetsov@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             
             // Открываем почтовый клиент
             window.open(mailtoLink);
@@ -2628,7 +2675,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Функция для копирования email
         function copyEmail(event) {
             event.preventDefault();
-            const email = 'info@climaprof.es';
+            const email = 'igor.kuznetsov@gmail.com';
             
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(email).then(function() {
@@ -2723,7 +2770,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const body = `Имя: ${name}\nEmail: ${email}\nТелефон: ${phone || 'Не указан'}\n\nСообщение:\n${message}`;
             
             // Создаем ссылку mailto
-            const mailtoLink = `mailto:info@climaprof.es?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailtoLink = `mailto:igor.kuznetsov@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             
             // Открываем почтовый клиент
             window.open(mailtoLink);

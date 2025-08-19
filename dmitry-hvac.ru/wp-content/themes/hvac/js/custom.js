@@ -567,7 +567,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3 style="margin: 0 0 30px 0; color: #0C3C8C; font-size: 24px;">Выберите удобный способ связи:</h3>
                     
                     <div style="display: flex; flex-direction: column; gap: 15px;">
-                        <a href="https://api.whatsapp.com/send/?phone=34613705466&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0&type=phone_number&app_absent=0" 
+                        <a href="https://api.whatsapp.com/send/?phone=79216433297&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0&type=phone_number&app_absent=0" 
                            target="_blank" rel="noopener noreferrer" 
                            style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #25D366; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
                             <img src="wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px;">
@@ -581,35 +581,20 @@ document.addEventListener('DOMContentLoaded', function() {
                             Telegram Igor
                         </a>
                         
-                        <a href="https://t.me/Dima_Gudmaer" 
-                           target="_blank" rel="noopener noreferrer" 
-                           style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #0088CC; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
-                            <img src="wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram" style="width: 24px; height: 24px;">
-                            Telegram Dima
-                        </a>
-                        
-                        <a href="tel:+34613705466" 
+                        <a href="tel:+79216433297" 
                            style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #47C5AD; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
                                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                             </svg>
-                            +34 613 70 54 66
+                            +7 921 643-32-97
                         </a>
                         
-                        <a href="tel:+34681990388" 
-                           style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #47C5AD; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease;">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
-                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                            </svg>
-                            +34 681 99 03 88
-                        </a>
-                        
-                        <a href="#" onclick="copyEmail('info@climaprof.es'); return false;" 
+                        <a href="#" onclick="copyEmail('igor.kuznetsov@gmail.com'); return false;" 
                            style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 15px; background: #0C3C8C; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; transition: all 0.3s ease; cursor: pointer;">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
                                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                             </svg>
-                            info@climaprof.es
+                            igor.kuznetsov@gmail.com
                         </a>
                     </div>
                     

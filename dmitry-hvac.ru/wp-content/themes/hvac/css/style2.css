@@ -1708,8 +1708,8 @@ a:visited {
 
 .about_block .dh {
   position: absolute;
-  width: 800px;
-  height: 520px;
+  width: 680px;
+  height: 400px;
   right: 150px;
   top: 50%;
   transform: translateY(-50%);
@@ -1717,15 +1717,15 @@ a:visited {
   object-fit: contain;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 28px;
-  padding: 60px;
+  border-radius: 24px;
+  padding: 30px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .about_block .dhmob {
   position: absolute;
-  width: 700px;
-  height: 450px;
+  width: 680px;
+  height: 400px;
   right: 80px;
   top: 50%;
   transform: translateY(-50%);
@@ -1734,8 +1734,8 @@ a:visited {
   z-index: 1;
   display: none;
   background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 26px;
-  padding: 55px;
+  border-radius: 24px;
+  padding: 30px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
@@ -1761,10 +1761,14 @@ a:visited {
   background-color: #fff;
   padding: 30px;
   border-radius: 24px;
-  max-width: 500px;
+  width: 680px;
+  height: 400px;
   position: relative;
   z-index: 11;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title_block_center .btn_icon {
@@ -4469,7 +4473,7 @@ ol li {
   align-items: center;
   background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
   border-radius: 16px;
-  padding: 16px 40px;
+  padding: 12px 20px;
   margin-right: 24px;
   height: 48px;
   box-sizing: border-box;
@@ -8657,7 +8661,7 @@ ol li {
   align-items: center;
   background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
   border-radius: 16px;
-  padding: 16px 40px;
+  padding: 12px 20px;
   margin-right: 24px;
   height: 48px;
   box-sizing: border-box;
@@ -10211,6 +10215,69 @@ ol li {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   transition: all 0.3s ease;
+}
+
+/* Стили для кнопок карт */
+.map-links {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.map-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-decoration: none;
+}
+
+.yandex-link {
+  background: linear-gradient(135deg, #ff0000 0%, #ff4444 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.yandex-link:hover {
+  background: linear-gradient(135deg, #ff2222 0%, #ff6666 100%);
+  color: #fff;
+}
+
+.gis-link {
+  background: linear-gradient(135deg, #009639 0%, #00b344 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.gis-link:hover {
+  background: linear-gradient(135deg, #00a63c 0%, #00c748 100%);
+  color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+  .map-links {
+    gap: 6px;
+  }
+  
+  .map-link {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
 }
 
 

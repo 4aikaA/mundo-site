@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Open Graph мета-теги -->
+    <meta property="og:title" content="Наши услуги - Профессиональные инженеры и проектировщики">
+    <meta property="og:description" content="Предлагаем профессиональные услуги в области проектирования, монтажа и обслуживания инженерных систем">
+    <meta property="og:image" content="../wp-content/themes/hvac/img/mundo-igor-preview.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dmitry-hvac.ru/sotrudnichestvo/">
+    <meta property="og:site_name" content="MUNDO IGOR">
+    <meta property="og:locale" content="ru_RU">
+    
+    <!-- Twitter Card мета-теги -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Наши услуги - Профессиональные инженеры и проектировщики">
+    <meta name="twitter:description" content="Предлагаем профессиональные услуги в области проектирования, монтажа и обслуживания инженерных систем">
+    <meta name="twitter:image" content="../wp-content/themes/hvac/img/mundo-igor-preview.svg">
+    
+    <title>Наши услуги - Профессиональные инженеры и проектировщики</title>
+    <link rel="stylesheet" type="text/css" href="../wp-content/themes/hvac/css/style2.css" />
+    <link rel="stylesheet" type="text/css" href="../wp-content/themes/hvac/css/splide.min.css" />
+    
+    <style>
+    /* Компенсация отсутствия баннера - добавляем отступ сверху */
+    body {
+        padding-top: 120px;
+    }
+    
+    /* Адаптивность для средних экранов */
+    @media screen and (max-width: 1024px) {
+        body {
+            padding-top: 110px;
+        }
+    }
+    
+    /* Обеспечиваем правильное позиционирование хедера */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Принудительно устанавливаем размеры хедера как на главной странице */
+    .header .menu li a {
+        padding: 16px 15px !important;
+        font-size: 16px !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* Стили для заголовка страницы в стиле главной страницы */
+    .page-header {
+        margin-top: 120px;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+    
+    .page-header-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .page-title {
+        font-size: 53px;
+        line-height: 53px;
+        font-family: "Pragmatica-Light";
+        margin-bottom: 16px;
+        color: #333;
+    }
+    
+    .page-title span {
+        font-family: "Pragmatica-Medium";
+        background: linear-gradient(135deg, #0C3C8C 0%, #1a4da3 50%, #47C5AD 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .page-description {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #666;
+        margin: 0;
+        font-weight: 300;
+    }
+    
+    /* Стили для контента услуг */
+    .services-content {
+        padding: 40px 0 80px;
+    }
+    
+    .services-section {
+        margin-bottom: 60px;
+    }
+    
+    .services-section h1 {
+        font-size: 42px;
+        color: #0C3C8C;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    
+    .services-section h2 {
+        font-size: 36px;
+        color: #0C3C8C;
+        text-align: center;
+        margin-bottom: 40px;
+        font-weight: bold;
+    }
+    
+    .services-intro {
+        text-align: center;
+        font-size: 18px;
+        color: #555;
+        max-width: 800px;
+        margin: 0 auto 60px;
+        line-height: 1.7;
+    }
+    
+    .specialties-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+    
+    .specialty-card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 2px solid #f0f0f0;
+    }
+    
+    .specialty-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        border-color: #47C5AD;
+    }
+    
+    .specialty-card h3 {
+        font-size: 24px;
+        color: #0C3C8C;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    
+    .specialty-card p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    
+    .specialty-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .specialty-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        color: #555;
+        font-size: 15px;
+        position: relative;
+        padding-left: 25px;
+    }
+    
+    .specialty-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .specialty-list li:before {
+        content: "✓";
+        color: #47C5AD;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        top: 10px;
+    }
+    
+    .benefits-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+        border-radius: 40px;
+        margin: 60px 0;
+    }
+    
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    
+    .benefit-item {
+        text-align: center;
+        padding: 30px 20px;
+        background: white;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+    
+    .benefit-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .benefit-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #0C3C8C, #47C5AD);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 32px;
+        color: white;
+    }
+    
+    .benefit-item h3 {
+        font-size: 20px;
+        color: #0C3C8C;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    
+    .benefit-item p {
+        color: #666;
+        line-height: 1.6;
+    }
+    
+    /* Исправляем стилизацию футера */
+    .footer_block_bottom .footer_soc_bottom {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .footer_block_bottom .footer_soc_bottom a {
+        display: block !important;
+        opacity: 1 !important;
+        transition: transform 0.3s ease !important;
+    }
+    
+    .footer_block_bottom .footer_soc_bottom a:hover {
+        transform: scale(1.1) !important;
+    }
+    
+    .footer_block_bottom .footer_soc_bottom img {
+        width: 32px !important;
+        height: 32px !important;
+        filter: brightness(1) !important;
+    }
+    
+    .footer_block_bottom_info {
+        text-align: center !important;
+        color: #666 !important;
+    }
+    
+    .footer_block_bottom_info .info {
+        margin-top: 10px !important;
+        font-size: 14px !important;
+        opacity: 0.8 !important;
+    }
+    
+    /* Исправляем контакты */
+    .footer_info_block {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 40px !important;
+        align-items: flex-start !important;
+    }
+    
+    .footer_info_left,
+    .footer_info_center,
+    .footer_info_right {
+        flex: 1 !important;
+        min-width: 300px !important;
+    }
+    
+    @media (max-width: 768px) {
+        .page-header {
+            margin-top: 100px;
+            margin-bottom: 40px;
+        }
+        
+        .page-title {
+            font-size: 41px;
+            line-height: 41px;
+        }
+        
+        .page-description {
+            font-size: 16px;
+        }
+        
+        .services-section h1 {
+            font-size: 32px;
+        }
+        
+        .services-section h2 {
+            font-size: 28px;
+        }
+        
+        .specialties-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .specialty-card {
+            padding: 30px 20px;
+        }
+        
+        body {
+            padding-top: 100px;
+        }
+        
+        .footer_info_left,
+        .footer_info_center,
+        .footer_info_right {
+            min-width: 100% !important;
+        }
+    }
+    
+    /* Стили модального окна - точно как на главной странице */
+    .pop_up {
+        padding: 0 20px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 120;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .pop_up_active {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    .pop_up_form {
+        border-radius: 24px;
+        background-color: #fff;
+        width: 100%;
+        max-width: 550px;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        padding: 16px;
+    }
+    
+    .pop_up_form_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 30px 0 30px;
+    }
+    
+    .pop_up_form_header_title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #333;
+        font-family: "Pragmatica-Medium";
+    }
+    
+    .close {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 24px;
+        height: 24px;
+    }
+    
+    .close:hover {
+        rotate: 90deg;
+    }
+    
+    .pop_up_form_btn {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        padding: 0 30px 30px 30px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .pop_up_form_btn a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        width: 280px;
+        justify-content: flex-start;
+    }
+    
+    .pop_up_form_btn .wap {
+        background: #25D366;
+        color: white;
+    }
+    
+    .pop_up_form_btn .wap:hover {
+        background: #1fc653;
+        transform: translateY(-2px);
+    }
+    
+    .pop_up_form_btn .tgm {
+        background: #0088cc;
+        color: white;
+    }
+    
+    .pop_up_form_btn .tgm:hover {
+        background: #006fa3;
+        transform: translateY(-2px);
+    }
+    
+    .pop_up_form_btn .phone {
+        background: #47C5AD;
+        color: white;
+    }
+    
+    .pop_up_form_btn .phone:hover {
+        background: #3db89a;
+        transform: translateY(-2px);
+    }
+    
+    .pop_up_form_btn .email {
+        background: #0C3C8C;
+        color: white;
+    }
+    
+    .pop_up_form_btn .email:hover {
+        background: #1a4da3;
+        transform: translateY(-2px);
+    }
+    
+    .pop_up_form_btn img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Скрытие модального окна при закрытии */
+    .pop_up:not(.pop_up_active) {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+    
+    .pop_up:not(.pop_up_active) .pop_up_form {
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+    }
+    
+    .pop_up_active .pop_up_form {
+        transform: scale(1);
+        transition: transform 0.3s ease;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .pop_up_form {
+            gap: 30px;
+        }
+        
+        .pop_up_form_header {
+            padding: 20px 20px 0 20px;
+        }
+        
+        .pop_up_form_btn {
+            padding: 0 20px 20px 20px;
+            align-items: center;
+        }
+        
+        .pop_up_form_header_title {
+            font-size: 20px;
+        }
+        
+        .pop_up_form_btn a {
+            padding: 12px 15px;
+            width: 240px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="menu_block">
+                <a href="../index.html" class="custom-logo-badge">
+                    <span class="custom-logo-text">Игорь Кузнецов</span>
+                </a>
+                <div class="menu">
+                    <nav class="header-menu-container">
+                        <ul class="header-menu">
+                            <li class="menu-item dropdown">
+                                <a href="../index.html#services-anchor">Выбрать услугу</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="../index.html#service-project">Проектирование инженерных систем</a></li>
+                                    <li><a href="../index.html#service-install">Системы кондиционирования</a></li>
+                                    <li><a href="../index.html#service-consult">Системы отопления</a></li>
+                                    <li><a href="../index.html#service-ventilation">Вентиляционные системы</a></li>
+                                    <li><a href="../index.html#service-vacuum">Встроенные пылесосы</a></li>
+                                    <li><a href="../index.html#service-automation">Автоматизация и диспетчеризация</a></li>
+                                    <li><a href="../index.html#service-aereco">Вентиляция Aereco</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a href="../konsultatsiya/index.html">Консультация</a></li>
+                            <li class="menu-item"><a href="index.html" class="active">Присоединяйтесь</a></li>
+                            <li class="menu-item"><a href="../primery-rabot/index.html">Примеры работ</a></li>
+                            <li class="menu-item"><a href="../about/index.html">О себе</a></li>
+                            <li class="menu-item"><a href="#contact-info">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="btn" onclick="openOrderModal()">Заказать расчет</div>
+            </div>
+            <div class="burger">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для заказа расчета -->
+    <div class="pop_up">
+        <div class="pop_up_form">
+            <div class="pop_up_form_header">
+                <div class="pop_up_form_header_title">Выберите удобный способ связи:</div>
+                <img src="../wp-content/themes/hvac/img/close.svg" class="close" alt="">
+            </div>
+
+            <div class="pop_up_form_btn">
+                <a href="https://api.whatsapp.com/send/?phone=79216433297&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7+%D1%80%D0%B0%D1%81%D1%87%D0%B5%D1%82%D0%B0&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="wap">
+                    <img src="../wp-content/themes/hvac/img/whatsapp.svg" alt="">
+                    <span>Написать WhatsApp</span>
+                </a>
+                <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer" class="tgm">
+                    <img src="../wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="">
+                    <span>Telegram Igor</span>
+                </a>
+                <a href="tel:+79216433297" class="phone">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <span>+7 921 643-32-97</span>
+                </a>
+                <a href="#" onclick="copyEmail('igor.kuznetsov@gmail.com'); return false;" class="email">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <span>igor.kuznetsov@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="page-title"><span>Профессиональные</span> услуги</div>
+                <div class="page-description">Наши реальные компетенции в области инженерных систем</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="services-content">
+
+            <!-- Готовы к сотрудничеству -->
+            <div class="services-section">
+                <h2>Готовы к сотрудничеству</h2>
+                <div class="services-intro" style="background: #f8f9fa; padding: 40px; border-radius: 20px; border-left: 4px solid #47C5AD;">
+                    <p><strong>Мы готовы к сотрудничеству!</strong> В нашей команде работают опытные 
+                    <strong>проектировщики, инженеры, монтажники, наладчики, программисты систем автоматизации, 
+                    консультанты и технические эксперты</strong>, готовые принять участие в ваших проектах 
+                    в области инженерных систем.</p>
+                    <p>Если вам нужны квалифицированные специалисты для реализации проектов любой сложности - 
+                    мы готовы присоединиться к вашей команде!</p>
+                </div>
+            </div>
+
+            <!-- Наши услуги -->
+            <div class="services-section">
+                <h2>Наши специализации</h2>
+                <div class="specialties-grid">
+                    <div class="specialty-card">
+                        <h3>🏗️ Проектирование и расчеты</h3>
+                        <p>Полный цикл проектных работ для инженерных систем любой сложности</p>
+                        <ul class="specialty-list">
+                            <li>Проектирование систем ОВиК</li>
+                            <li>Теплотехнические расчеты</li>
+                            <li>Аэродинамические расчеты</li>
+                            <li>3D-моделирование в CAD</li>
+                            <li>Энергоаудит зданий</li>
+                            <li>Подбор оборудования</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specialty-card">
+                        <h3>⚙️ Монтаж и пусконаладка</h3>
+                        <p>Профессиональный монтаж и настройка инженерных систем</p>
+                        <ul class="specialty-list">
+                            <li>Монтаж систем вентиляции</li>
+                            <li>Установка кондиционеров</li>
+                            <li>Монтаж отопительных систем</li>
+                            <li>Прокладка коммуникаций</li>
+                            <li>Пусконаладочные работы</li>
+                            <li>Балансировка систем</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specialty-card">
+                        <h3>🔧 Автоматизация и диспетчеризация</h3>
+                        <p>Современные решения для управления инженерными системами</p>
+                        <ul class="specialty-list">
+                            <li>Проектирование систем автоматики</li>
+                            <li>Программирование контроллеров</li>
+                            <li>Монтаж систем управления</li>
+                            <li>Диспетчеризация объектов</li>
+                            <li>Удаленный мониторинг</li>
+                            <li>Интеграция со смарт-системами</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specialty-card">
+                        <h3>🔍 Техническое обслуживание</h3>
+                        <p>Комплексное сервисное обслуживание инженерных систем</p>
+                        <ul class="specialty-list">
+                            <li>Регулярное ТО систем ОВиК</li>
+                            <li>Диагностика оборудования</li>
+                            <li>Ремонт и замена узлов</li>
+                            <li>Промывка систем</li>
+                            <li>Замена фильтров</li>
+                            <li>Аварийный выезд 24/7</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specialty-card">
+                        <h3>📋 Консультации и экспертиза</h3>
+                        <p>Экспертные консультации и техническая поддержка</p>
+                        <ul class="specialty-list">
+                            <li>Техническое консультирование</li>
+                            <li>Энергоаудит систем</li>
+                            <li>Экспертиза проектов</li>
+                            <li>Подбор оптимальных решений</li>
+                            <li>Обучение персонала</li>
+                            <li>Технический надзор</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specialty-card">
+                        <h3>⚡ Специализированные системы</h3>
+                        <p>Установка и обслуживание специализированного оборудования</p>
+                        <ul class="specialty-list">
+                            <li>Центральные пылесосы</li>
+                            <li>Системы рекуперации</li>
+                            <li>Тепловые насосы</li>
+                            <li>VRF/VRV системы</li>
+                            <li>Промышленная вентиляция</li>
+                            <li>Чистые помещения</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Преимущества работы с нами -->
+            <div class="benefits-section">
+                <div class="container">
+                    <div class="services-section">
+                        <h2>Почему выбирают нас</h2>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">⭐</div>
+                                <h3>Высокая квалификация</h3>
+                                <p>Многолетний опыт работы с инженерными системами и постоянное повышение квалификации</p>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🎯</div>
+                                <h3>Индивидуальный подход</h3>
+                                <p>Разрабатываем решения под конкретные задачи заказчика с учетом всех особенностей объекта</p>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <div class="benefit-icon">⚡</div>
+                                <h3>Оперативность</h3>
+                                <p>Быстрое реагирование на заявки, соблюдение сроков выполнения работ</p>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔧</div>
+                                <h3>Современное оборудование</h3>
+                                <p>Используем передовые технологии и качественное оборудование ведущих производителей</p>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📜</div>
+                                <h3>Гарантии качества</h3>
+                                <p>Предоставляем гарантию на все виды выполненных работ и установленное оборудование</p>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <h3>Честные цены</h3>
+                                <p>Прозрачное ценообразование без скрытых доплат, конкурентоспособные расценки</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Info Section -->
+    <div id="contact-info" class="footer_info" style="padding: 80px 0;">
+        <div class="container">
+            <div class="footer_info_block">
+                
+                <!-- Левая колонка -->
+                <div class="footer_info_left">
+                    <div class="footer_info_item">
+                        <div class="footer_info_item_info">
+                            <div class="footer_info_item_info_name"><span>Онлайн</span> магазин</div>
+                            <div class="footer_info_item_info_contact">
+                                <a href="https://mundoclimatico.es/" target="_blank" rel="noopener noreferrer" class="mundoclimatico-link">Mundo Climatico - онлайн магазин климатического оборудования</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer_info_item">
+                        <div class="footer_info_item_info">
+                            <div class="footer_info_item_info_name"><span>Телефон</span></div>
+                            <div class="footer_info_item_info_contact phone-numbers">
+                                <a href="tel:+79216433297" class="phone-link">+7 921 643-32-97</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer_info_item">
+                        <div class="footer_info_item_info">
+                            <div class="footer_info_item_info_name"><span>Email</span></div>
+                            <div class="footer_info_item_info_contact">
+                                <a href="mailto:igor.kuznetsov@gmail.com" onclick="copyEmail(event)">igor.kuznetsov@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Центральная колонка - форма -->
+                <div class="footer_info_center">
+                    <div class="footer_info_item contact-form-container">
+                        <div class="footer_info_item_info">
+                            <div class="footer_info_item_info_name contact-form-title"><span>Напишите</span> нам</div>
+                            <form class="contact-form" onsubmit="sendContactForm(event)">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Имя</label>
+                                        <input type="text" class="form-input" name="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-input" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Телефон</label>
+                                    <input type="tel" class="form-input" name="phone" placeholder="+7 XXX XXX-XX-XX">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Сообщение</label>
+                                    <textarea class="form-textarea" name="message" rows="4" required></textarea>
+                                </div>
+                                <div class="form-submit">
+                                    <button type="submit" class="submit-btn">Отправить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правая колонка -->
+                <div class="footer_info_right">
+                    <div class="footer_info_item">
+                        <div class="footer_info_item_info">
+                            <div class="footer_info_item_info_name"><span>Социальные</span> сети</div>
+                            <div class="footer_info_item_info_contact">
+                                <div class="footer_soc">
+                                    <a href="https://api.whatsapp.com/send/?phone=79216433297&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="../wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
+                                    <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img src="../wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Igor"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer_info_item">
+                        <div class="footer_info_item_info">
+                            <div class="footer_info_item_info_name"><span>Адрес</span></div>
+                            <div class="footer_info_item_info_contact">
+                                <div class="address-text">188660, Ленинградская обл., дер. Порошкино, ул.Березовая, уч.8</div>
+                                <div class="map-links" style="margin-top: 8px; display: flex; gap: 10px; flex-wrap: wrap;">
+                                    <a href="https://yandex.ru/maps/?text=188660%2C%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%2E%2C%20%D0%B4%D0%B5%D1%80%2E%20%D0%9F%D0%BE%D1%80%D0%BE%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%2C%20%D1%83%D0%BB%2E%D0%91%D0%B5%D1%80%D0%B5%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%2C%20%D1%83%D1%87%2E8" target="_blank" rel="noopener noreferrer" class="map-link yandex-link">
+                                        <span>Яндекс Карты</span>
+                                    </a>
+                                    <a href="https://2gis.ru/search/188660%2C%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%2E%2C%20%D0%B4%D0%B5%D1%80%2E%20%D0%9F%D0%BE%D1%80%D0%BE%D1%88%D0%BA%D0%B8%D0%BD%D0%BE%2C%20%D1%83%D0%BB%2E%D0%91%D0%B5%D1%80%D0%B5%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%2C%20%D1%83%D1%87%2E8" target="_blank" rel="noopener noreferrer" class="map-link gis-link">
+                                        <span>2ГИС</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="footer_block">
+                <div class="footer_block_top">
+                    <div class="footer_menu_block">
+                        <nav class="header-menu-container">
+                            <ul class="header-menu">
+                                <li class="menu-item"><a href="../index.html#services-anchor">Выбрать услугу</a></li>
+                                <li class="menu-item"><a href="../konsultatsiya/index.html">Консультация</a></li>
+                                <li class="menu-item"><a href="index.html">Присоединяйтесь</a></li>
+                                <li class="menu-item"><a href="../primery-rabot/index.html">Примеры работ</a></li>
+                                <li class="menu-item"><a href="../about/index.html">О себе</a></li>
+                                <li class="menu-item"><a href="#contact-info">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="footer_block_bottom">
+                    <div class="footer_soc_bottom">
+                        <a href="https://api.whatsapp.com/send/?phone=79216433297&text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82.+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><img src="../wp-content/themes/hvac/img/whatsapp.svg" alt="WhatsApp"></a>
+                        <a href="https://t.me/igor_kuznetsov1" target="_blank" rel="noopener noreferrer"><img src="../wp-content/themes/hvac/img/telegram-svgrepo-com.svg" alt="Telegram Igor"></a>
+                    </div>
+
+                    <div class="footer_block_bottom_info">
+                        <div>Copyright © 2009 - 2025</div>
+                        <div class="info">
+                            Перепечатка, а равно использование материалов с данного сайта, разрешена только с письменного согласия владельца.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../wp-content/themes/hvac/js/jquery-3.6.1.min.js"></script>
+    <script src="../wp-content/themes/hvac/js/custom.js"></script>
+    <script src="../wp-content/themes/hvac/js/navigation8a54.js"></script>
+
+    <script>
+        // Функция для копирования email
+        function copyEmail(event) {
+            event.preventDefault();
+            const email = 'igor.kuznetsov@gmail.com';
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(email).then(function() {
+                    alert('Email скопирован в буфер обмена!');
+                }).catch(function(err) {
+                    console.error('Ошибка копирования: ', err);
+                });
+            }
+        }
+
+        // Функция отправки формы
+        function sendContactForm(event) {
+            event.preventDefault();
+            alert('Форма отправлена! Мы свяжемся с вами в ближайшее время.');
+        }
+
+        // Обработка неразрывных пробелов
+        document.addEventListener("DOMContentLoaded", function() {
+            function handleTextNode(textNode) {
+                const prepositions = ["в", "и", "на", "с", "к", "по", "о", "об", "от", "из", "у", "за", "над", "под", "перед", "при"];
+                const regex = new RegExp(`(\\s)(${prepositions.join("|")})(\\s)`, "gi");
+                textNode.nodeValue = textNode.nodeValue.replace(regex, "$1$2\u00A0");
+            }
+
+            function processTextNodes(element) {
+                const nodes = [];
+                const treeWalker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+                while (treeWalker.nextNode()) {
+                    nodes.push(treeWalker.currentNode);
+                }
+                nodes.forEach(handleTextNode);
+            }
+
+            processTextNodes(document.body);
+        });
+        
+        // Функции для модального окна заказа расчета
+        function openOrderModal() {
+            var popup = document.querySelector('.pop_up');
+            if (popup) {
+                popup.classList.add('pop_up_active');
+                document.body.style.overflow = 'hidden';
+                // Закрываем бургер меню при открытии модального окна
+                var burger = document.querySelector('.burger');
+                var menu = document.querySelector('.burger_menu');
+                if (burger && menu) {
+                    burger.classList.remove('active');
+                    menu.classList.remove('active');
+                }
+            }
+        }
+        
+        function closeOrderModal() {
+            var popup = document.querySelector('.pop_up');
+            if (popup) {
+                popup.classList.remove('pop_up_active');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Обработчики для модального окна
+        document.addEventListener('DOMContentLoaded', function() {
+            var popup = document.querySelector('.pop_up');
+            var closeBtn = document.querySelector('.pop_up .close');
+            
+            // Закрытие по кнопке X
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeOrderModal);
+            }
+            
+            // Закрытие по клику вне модального окна
+            if (popup) {
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        closeOrderModal();
+                    }
+                });
+            }
+            
+            // Закрытие по Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popup && popup.classList.contains('pop_up_active')) {
+                    closeOrderModal();
+                }
+            });
+        });
+        
+        // Функция для копирования email
+        function copyEmail(email) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(email).then(function() {
+                    showNotification('Email скопирован в буфер обмена!');
+                }).catch(function(err) {
+                    console.error('Ошибка копирования: ', err);
+                    fallbackCopyTextToClipboard(email);
+                });
+            } else {
+                fallbackCopyTextToClipboard(email);
+            }
+        }
+        
+        // Fallback для старых браузеров
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showNotification('Email скопирован в буфер обмена!');
+                }
+            } catch (err) {
+                console.error('Fallback: Не удалось скопировать', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        // Показ уведомления
+        function showNotification(message) {
+            // Создаем элемент уведомления
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #47C5AD;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 8px;
+                z-index: 10000;
+                font-weight: 500;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Анимация появления
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Удаление через 3 секунды
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html> 
