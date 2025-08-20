@@ -265,13 +265,14 @@
     
     .footer_block_bottom_info {
         text-align: center !important;
-        color: #666 !important;
+        color: #fff !important;
     }
     
     .footer_block_bottom_info .info {
         margin-top: 10px !important;
         font-size: 14px !important;
-        opacity: 0.8 !important;
+        opacity: 0.9 !important;
+        color: #fff !important;
     }
     
     /* Исправляем контакты */
@@ -500,7 +501,42 @@
             width: 240px;
         }
     }
-    </style>
+    
+/* Стили футера как на странице Примеры работ */
+
+/* Заголовок секции с кнопкой CTA */
+.section-header-with-cta { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.section-header-with-cta h2 { margin: 0; }
+.cta-contact-btn { display: inline-flex; align-items: center; justify-content: center; text-align: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: linear-gradient(135deg, #0C3C8C, #47C5AD); color: #fff !important; text-decoration: none; font-family: "Pragmatica-Medium"; font-size: 16px; box-shadow: 0 8px 20px rgba(12,60,140,.25); transition: transform .2s ease, box-shadow .2s ease; }
+.cta-contact-btn:hover, .cta-contact-btn:visited, .cta-contact-btn:active, .cta-contact-btn:focus { color: #fff !important; }
+.cta-contact-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(12,60,140,.35); }
+.cta-contact-btn::before { content: ""; width: 18px; height: 18px; mask: url('../wp-content/themes/hvac/img/telegram-svgrepo-com.svg') no-repeat center / contain; -webkit-mask: url('../wp-content/themes/hvac/img/telegram-svgrepo-com.svg') no-repeat center / contain; background: #fff; opacity: .9; }
+
+.footer_bottom .wind-lines-overlay { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+
+.footer_bottom {
+	position: relative;
+	height: 50vh;
+	margin-top: 190px;
+	padding-top: 60px;
+	border-radius: 40px 40px 0 0;
+	background: linear-gradient(135deg, rgba(12, 60, 140, 0.8) 0%, rgba(26, 77, 163, 0.8) 100%), url("../wp-content/themes/hvac/img/диспет.jpg");
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: end;
+	align-items: end;
+}
+
+.footer_block { position: relative; z-index: 10; display: flex; flex-direction: column; gap: 80px; padding-bottom: 30px; color: #fff; }
+.footer_block_top { display: flex; justify-content: center; align-items: center; width: 100%; }
+.footer_menu_block { width: 100%; display: flex; justify-content: center; align-items: center; margin: 0 auto; text-align: center; }
+.footer_menu_block .header-menu { margin: 0; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; width: 100%; max-width: 800px; margin: 0 auto; position: relative; left: 50%; transform: translateX(-50%); }
+.footer_menu_block .header-menu li { list-style-type: none; }
+.footer_menu_block .header-menu a { color: #fff; text-decoration: none; font-size: 14px; padding: 8px 16px; background: rgba(255, 255, 255, 0.1); border-radius: 20px; transition: all 0.3s ease; display: block; }
+.footer_menu_block .header-menu a:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+
+</style>
 </head>
 
 <body>
@@ -592,14 +628,16 @@
 
             <!-- Готовы к сотрудничеству -->
             <div class="services-section">
-                <h2>Готовы к сотрудничеству</h2>
+                <div class="section-header-with-cta">
+                    <h2>Готовы к сотрудничеству</h2>
+                    <a class="cta-contact-btn" href="#contact-info" onclick="openOrderModal(); return false;">Контакты</a>
+                </div>
                 <div class="services-intro" style="background: #f8f9fa; padding: 40px; border-radius: 20px; border-left: 4px solid #47C5AD;">
-                    <p><strong>Мы готовы к сотрудничеству!</strong> В нашей команде работают опытные 
-                    <strong>проектировщики, инженеры, монтажники, наладчики, программисты систем автоматизации, 
-                    консультанты и технические эксперты</strong>, готовые принять участие в ваших проектах 
-                    в области инженерных систем.</p>
-                    <p>Если вам нужны квалифицированные специалисты для реализации проектов любой сложности - 
-                    мы готовы присоединиться к вашей команде!</p>
+                    <p><strong>Мы будем рады сотрудничать!</strong> Мы открыты к совместной работе с 
+                    <strong>проектировщиками, инженерами, монтажниками, наладчиками, архитекторами и дизайнерами</strong> 
+                    любого уровня и формата.</p>
+                    <p>Если вам нужны квалифицированные специалисты для реализации проектов любой сложности — 
+                    мы готовы присоединиться к вашей команде.</p>
                 </div>
             </div>
 
@@ -839,6 +877,9 @@
 
     <!-- Footer -->
     <div class="footer_bottom">
+		<div class="wind-lines-overlay">
+			<img src="../wp-content/themes/hvac/img/wind-blue-footer.svg" alt="Wind elements" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+		</div>
         <div class="container">
             <div class="footer_block">
                 <div class="footer_block_top">
@@ -847,7 +888,7 @@
                             <ul class="header-menu">
                                 <li class="menu-item"><a href="../index.html#services-anchor">Выбрать услугу</a></li>
                                 <li class="menu-item"><a href="../konsultatsiya/index.html">Консультация</a></li>
-                                <li class="menu-item"><a href="index.html">Присоединяйтесь</a></li>
+                                <li class="menu-item"><a href="../sotrudnichestvo/index.html">Присоединяйтесь</a></li>
                                 <li class="menu-item"><a href="../primery-rabot/index.html">Примеры работ</a></li>
                                 <li class="menu-item"><a href="../about/index.html">О себе</a></li>
                                 <li class="menu-item"><a href="#contact-info">Контакты</a></li>

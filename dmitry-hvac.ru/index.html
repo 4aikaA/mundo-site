@@ -219,51 +219,48 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
             transform: translateY(-1px);
         }
         
-        /* Стили для кнопок футера */
+        /* Стили для кнопок футера (как в Присоединяйтесь) */
         .footer_menu_block {
-            display: block;
-            background: rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .footer_menu_block .header-menu {
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-        
-        .footer_menu_block .header-menu li {
-            margin: 0;
-            padding: 0;
-        }
-        
-        .footer_menu_block .header-menu a {
-            display: block;
-            padding: 12px 24px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333 !important;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            min-width: 120px;
+            margin: 0 auto 20px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: transparent;
+            padding: 0;
         }
-        
+        .footer_menu_block .header-menu {
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            list-style: none;
+            padding: 0;
+        }
+        .footer_menu_block .header-menu li { list-style-type: none; margin: 0; padding: 0; }
+        .footer_menu_block .header-menu a {
+            color: #fff !important;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            display: block;
+        }
         .footer_menu_block .header-menu a:hover {
-            background: rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
         
         /* Мобильные стили */
